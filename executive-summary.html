@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winter 2026 MAP Student Data - Executive Summary</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f1f2f6;
+            color: #000;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+        /* Navigation */
+        .nav {
+            background: #fff;
+            padding: 16px 24px;
+            border-radius: 16px;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .nav-brand {
+            font-weight: 600;
+            color: #000;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 8px;
+        }
+        .nav-links a {
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .nav-links a.active {
+            background: #0072e5;
+            color: #fff;
+        }
+        .nav-links a:not(.active) {
+            color: #666;
+        }
+        .nav-links a:not(.active):hover {
+            background: #f1f2f6;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: #fff;
+            border-radius: 24px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+            color: #000;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .kpi-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+        }
+        .kpi-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        .kpi-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #0072e5;
+            line-height: 1.2;
+        }
+        .kpi-label {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+        .kpi-trend {
+            font-size: 0.85rem;
+            margin-top: 12px;
+            font-weight: 500;
+        }
+        .trend-up { color: #22c55e; }
+        .trend-down { color: #ef4444; }
+
+        .section {
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .section h2 {
+            font-size: 1.6rem;
+            margin-bottom: 24px;
+            color: #000;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 28px;
+            background: #0072e5;
+            border-radius: 2px;
+        }
+        .section h3 {
+            font-size: 1.1rem;
+            margin: 28px 0 16px;
+            color: #000;
+            font-weight: 600;
+        }
+
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .insight-card {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 24px;
+            border-left: 4px solid #0072e5;
+            transition: all 0.3s ease;
+        }
+        .insight-card:hover {
+            background: #f1f2f6;
+        }
+        .insight-card.positive { border-left-color: #22c55e; }
+        .insight-card.negative { border-left-color: #ef4444; }
+        .insight-card.warning { border-left-color: #f59e0b; }
+        .insight-card h4 {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #000;
+        }
+        .insight-card p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+        .data-table th, .data-table td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .data-table th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #000;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .chart-container {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 28px;
+            margin: 20px 0;
+        }
+
+        .recommendation-list {
+            list-style: none;
+        }
+        .recommendation-list li {
+            padding: 20px 24px;
+            background: #f8f9fa;
+            border-radius: 16px;
+            margin: 16px 0;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+        }
+        .recommendation-list li:hover {
+            background: #f1f2f6;
+        }
+        .rec-priority {
+            background: #0072e5;
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .rec-priority.high { background: #ef4444; }
+        .rec-priority.medium { background: #f59e0b; }
+        .rec-priority.low { background: #22c55e; }
+
+        .app-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 16px 0;
+            border: 1px solid #e5e7eb;
+        }
+        .app-stat { text-align: center; }
+        .app-stat .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #000;
+        }
+        .app-stat .label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .verdict {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .verdict.excellent { background: #dcfce7; color: #166534; }
+        .verdict.good { background: #d1fae5; color: #065f46; }
+        .verdict.mixed { background: #fef3c7; color: #92400e; }
+        .verdict.concern { background: #fee2e2; color: #991b1b; }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+        @media (max-width: 900px) {
+            .two-col { grid-template-columns: 1fr; }
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+            border: 1px solid #bae6fd;
+            border-radius: 16px;
+            padding: 24px;
+            margin: 20px 0;
+        }
+        .highlight-box p {
+            color: #0c4a6e;
+        }
+
+        .star-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+        .star-card {
+            background: linear-gradient(135deg, #fef9c3 0%, #fffbeb 100%);
+            border: 1px solid #fde047;
+            border-radius: 16px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .star-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .star-card .growth {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #b45309;
+            margin-bottom: 4px;
+        }
+        .star-card strong {
+            color: #000;
+            font-size: 1.05rem;
+        }
+
+        .pill-tag {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-right: 8px;
+        }
+
+        .stat-highlight {
+            color: #0072e5;
+            font-weight: 600;
+        }
+        .stat-positive { color: #22c55e; }
+        .stat-negative { color: #ef4444; }
+        .stat-warning { color: #f59e0b; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        footer p {
+            margin: 4px 0;
+        }
+
+        /* Alpha-style accent line */
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background: #0072e5;
+            border-radius: 2px;
+            margin: 16px auto 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .section { padding: 28px 20px; }
+            .kpi-value { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="index.html" class="nav-brand">MAP Analysis</a>
+            <div class="nav-links">
+                <a href="executive-summary.html" class="active">Executive Summary</a>
+                <a href="struggling-students.html">Struggling Students</a>
+            </div>
+        </nav>
+
+        <header>
+            <h1>Winter 2026 MAP Analysis</h1>
+            <p class="subtitle">Language & Vocabulary Instruction Performance Analysis</p>
+            <p class="subtitle" style="margin-top: 8px;"><span class="pill-tag">286 Students</span> with Growth Data</p>
+            <div class="accent-line"></div>
+        </header>
+
+        <!-- Key Performance Indicators -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-value">3.56x</div>
+                <div class="kpi-label">Average Growth</div>
+                <div class="kpi-trend trend-up">Goal: 2x | Exceeding by 78%</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value">68.5%</div>
+                <div class="kpi-label">Meeting 2x Goal</div>
+                <div class="kpi-trend">196 of 286 students</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value">35.3%</div>
+                <div class="kpi-label">High Performers (5x+)</div>
+                <div class="kpi-trend trend-up">101 students excelling</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-value">31.5%</div>
+                <div class="kpi-label">Below Goal (&lt;2x)</div>
+                <div class="kpi-trend trend-down">90 students need support</div>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="section">
+            <h2>Executive Summary</h2>
+            <div class="highlight-box">
+                <p><strong>Bottom Line:</strong> The program is performing well overall (3.56x average growth vs 2x goal), but there are significant opportunities to improve outcomes through better app difficulty calibration, optimizing time allocation, and targeted interventions for struggling students.</p>
+            </div>
+
+            <div class="insight-grid">
+                <div class="insight-card positive">
+                    <h4>Key Win: EGUMPP Impact</h4>
+                    <p>EGUMPP users show 75% higher growth than non-users (4.81x vs 2.75x). This is the strongest app-growth correlation in the data.</p>
+                </div>
+                <div class="insight-card warning">
+                    <h4>Critical Finding: Time Paradox</h4>
+                    <p>Students spending MORE time are growing LESS. Q1 (1,534 min): 4.59x growth vs Q4 (3,687 min): 2.81x growth. Quality over quantity matters.</p>
+                </div>
+                <div class="insight-card negative">
+                    <h4>Concern: Language App Calibration</h4>
+                    <p>40.9% of students earn >2 XP/min in Language apps - content may be too easy or students are gaming. Need difficulty recalibration.</p>
+                </div>
+                <div class="insight-card positive">
+                    <h4>Opportunity: Vocabulary Focus</h4>
+                    <p>Vocab-heavy students (>65% time) achieve 4.67x growth vs Language-heavy (&lt;35%): 2.66x. Increasing vocab time could boost outcomes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- App Performance Analysis -->
+        <div class="section">
+            <h2>App Performance Analysis</h2>
+
+            <h3>Language Apps (Grades 3-12)</h3>
+            <p style="color:#666; margin-bottom:20px; font-size: 0.95rem;">MobyMax: Base course (3-6, 8th) | Freckle: Remediation (3-8) | EGUMPP: Base course (7th)</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>App</th>
+                        <th>Users</th>
+                        <th>User Growth</th>
+                        <th>Non-User Growth</th>
+                        <th>Difference</th>
+                        <th>Verdict</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>EGUMPP</strong></td>
+                        <td>112 (39%)</td>
+                        <td>4.81x</td>
+                        <td>2.75x</td>
+                        <td class="stat-positive">+75%</td>
+                        <td><span class="verdict excellent">Excellent</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>MobyMax</strong></td>
+                        <td>253 (88%)</td>
+                        <td>3.69x</td>
+                        <td>2.55x</td>
+                        <td class="stat-positive">+45%</td>
+                        <td><span class="verdict good">Strong</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Freckle</strong></td>
+                        <td>245 (86%)</td>
+                        <td>3.68x</td>
+                        <td>2.82x</td>
+                        <td class="stat-positive">+31%</td>
+                        <td><span class="verdict good">Good</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="insight-card positive" style="margin-top:24px;">
+                <h4>EGUMPP Deep Dive</h4>
+                <p>High performers use EGUMPP at 52.5% vs 34.4% for low performers. Particularly effective for High School (6.37x) and Middle School (5.00x). <strong>Recommendation:</strong> Expand EGUMPP usage beyond just 7th grade base course.</p>
+            </div>
+
+            <h3>Vocabulary Apps (Grades 3-12)</h3>
+            <p style="color:#666; margin-bottom:20px; font-size: 0.95rem;">Vocabloco: Base/Remediation (3-5), Remediation (6-12) | Membean: Base course (6-12)</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>App</th>
+                        <th>Users</th>
+                        <th>User Growth</th>
+                        <th>Non-User Growth</th>
+                        <th>Difference</th>
+                        <th>Verdict</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Membean</strong></td>
+                        <td>118 (41%)</td>
+                        <td>3.89x</td>
+                        <td>3.33x</td>
+                        <td class="stat-positive">+17%</td>
+                        <td><span class="verdict good">Good</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vocabloco</strong></td>
+                        <td>214 (75%)</td>
+                        <td>3.49x</td>
+                        <td>3.77x</td>
+                        <td class="stat-negative">-7%</td>
+                        <td><span class="verdict mixed">Mixed</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="insight-card warning" style="margin-top:24px;">
+                <h4>Vocabloco Analysis</h4>
+                <p>Overall usage doesn't predict success, BUT top XP quartile students show 4.43x growth vs 3.17x for others. <strong>Issue:</strong> Many students may be using it without sufficient engagement. Focus on XP quality, not just usage.</p>
+            </div>
+        </div>
+
+        <!-- XP Efficiency Analysis -->
+        <div class="section">
+            <h2>XP Efficiency Analysis</h2>
+            <p style="color:#666; margin-bottom:24px; font-size: 0.95rem;">Ideal: ~1.0 XP/min | Too Easy/Gaming: >2.0 XP/min | Too Hard/Antipatterns: &lt;0.5 XP/min</p>
+
+            <div class="two-col">
+                <div class="chart-container">
+                    <h3 style="margin-top:0; margin-bottom:20px;">Vocabulary Apps</h3>
+                    <div class="app-card">
+                        <div class="app-stat">
+                            <div class="value stat-positive">1.27</div>
+                            <div class="label">Avg XP/Minute</div>
+                        </div>
+                        <div class="app-stat">
+                            <div class="value">14.9%</div>
+                            <div class="label">Potentially Too Easy</div>
+                        </div>
+                        <div class="app-stat">
+                            <div class="value">19.4%</div>
+                            <div class="label">Potentially Too Hard</div>
+                        </div>
+                        <div class="app-stat">
+                            <div class="value stat-positive">65.7%</div>
+                            <div class="label">Optimal Range</div>
+                        </div>
+                    </div>
+                    <p style="color:#22c55e; margin-top:16px; font-weight:500;"><strong>Verdict:</strong> Well-calibrated. Content difficulty appropriate for most students.</p>
+                </div>
+
+                <div class="chart-container">
+                    <h3 style="margin-top:0; margin-bottom:20px;">Language Apps</h3>
+                    <div class="app-card">
+                        <div class="app-stat">
+                            <div class="value stat-warning">1.94</div>
+                            <div class="label">Avg XP/Minute</div>
+                        </div>
+                        <div class="app-stat">
+                            <div class="value stat-negative">40.9%</div>
+                            <div class="label">Potentially Too Easy</div>
+                        </div>
+                        <div class="app-stat">
+                            <div class="value">12.8%</div>
+                            <div class="label">Potentially Too Hard</div>
+                        </div>
+                        <div class="app-stat">
+                            <div class="value">46.3%</div>
+                            <div class="label">Optimal Range</div>
+                        </div>
+                    </div>
+                    <p style="color:#ef4444; margin-top:16px; font-weight:500;"><strong>Concern:</strong> Content running too easy. 40.9% of students may be gaming or need harder content.</p>
+                </div>
+            </div>
+
+            <h3>XP Efficiency Impact on Growth</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Efficiency Level</th>
+                        <th>Vocab Growth</th>
+                        <th>Language Growth</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Low (&lt;0.5 XP/min)</td>
+                        <td>3.58x</td>
+                        <td class="stat-negative">2.26x</td>
+                        <td>Content too hard hurts Language more than Vocab</td>
+                    </tr>
+                    <tr>
+                        <td>Optimal (0.5-2 XP/min)</td>
+                        <td>3.25x</td>
+                        <td class="stat-positive">3.83x</td>
+                        <td>Sweet spot for Language learning</td>
+                    </tr>
+                    <tr>
+                        <td>High (>2 XP/min)</td>
+                        <td class="stat-positive">5.55x</td>
+                        <td>3.71x</td>
+                        <td>High vocab efficiency correlates with top performers</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Level & Campus Analysis -->
+        <div class="section">
+            <h2>Performance by Level & Campus</h2>
+
+            <div class="two-col">
+                <div>
+                    <h3>By Grade Level</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>Students</th>
+                                <th>Avg Growth</th>
+                                <th>Meeting Goal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>High School (9-12)</td>
+                                <td>40</td>
+                                <td class="stat-positive"><strong>5.21x</strong></td>
+                                <td class="stat-positive">85.0%</td>
+                            </tr>
+                            <tr>
+                                <td>Middle School (6-8)</td>
+                                <td>79</td>
+                                <td>3.89x</td>
+                                <td>65.8%</td>
+                            </tr>
+                            <tr>
+                                <td>Level 2 (4-5)</td>
+                                <td>79</td>
+                                <td>3.58x</td>
+                                <td>73.4%</td>
+                            </tr>
+                            <tr>
+                                <td>Level 1 (K-3)</td>
+                                <td>34</td>
+                                <td class="stat-warning">3.06x</td>
+                                <td>76.5%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="insight-card warning" style="margin-top:20px;">
+                        <h4>Level 1 Needs Attention</h4>
+                        <p>Youngest learners show lowest average growth. Consider age-appropriate engagement strategies and ensure content difficulty is well-matched.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Top Campuses</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Campus</th>
+                                <th>n</th>
+                                <th>Avg Growth</th>
+                                <th>Meeting Goal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Alpha Santa Barbara</td>
+                                <td>5</td>
+                                <td class="stat-positive"><strong>10.30x</strong></td>
+                                <td>80.0%</td>
+                            </tr>
+                            <tr>
+                                <td>Alpha High School</td>
+                                <td>28</td>
+                                <td class="stat-positive">5.50x</td>
+                                <td class="stat-positive">89.3%</td>
+                            </tr>
+                            <tr>
+                                <td>Alpha Miami</td>
+                                <td>27</td>
+                                <td class="stat-positive">5.14x</td>
+                                <td>74.1%</td>
+                            </tr>
+                            <tr>
+                                <td>Alpha Brownsville</td>
+                                <td>18</td>
+                                <td>3.99x</td>
+                                <td>66.7%</td>
+                            </tr>
+                            <tr>
+                                <td>Alpha Austin</td>
+                                <td>73</td>
+                                <td>3.70x</td>
+                                <td>74.0%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="insight-card positive" style="margin-top:20px;">
+                        <h4>Alpha High School Excellence</h4>
+                        <p>89.3% meeting goal is the highest rate. Study their practices for potential replication across other campuses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Time & Tenure Analysis -->
+        <div class="section">
+            <h2>Time Investment & Tenure Analysis</h2>
+
+            <div class="highlight-box">
+                <h4 style="color:#0369a1; margin-bottom:12px;">Critical Insight: The Time Paradox</h4>
+                <p>Counter-intuitively, students spending MORE time are achieving LESS growth. This suggests struggling students are being given more time but not more effective instruction. Focus should shift from quantity to quality of learning time.</p>
+            </div>
+
+            <div class="two-col">
+                <div>
+                    <h3>Growth by Total Minutes</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Quartile</th>
+                                <th>Avg Minutes</th>
+                                <th>Growth</th>
+                                <th>Meeting Goal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background:#f0fdf4;">
+                                <td>Q1 (Lowest)</td>
+                                <td>1,534</td>
+                                <td class="stat-positive"><strong>4.59x</strong></td>
+                                <td>70.0%</td>
+                            </tr>
+                            <tr>
+                                <td>Q2</td>
+                                <td>2,165</td>
+                                <td>3.93x</td>
+                                <td>72.9%</td>
+                            </tr>
+                            <tr>
+                                <td>Q3</td>
+                                <td>2,704</td>
+                                <td>3.02x</td>
+                                <td>71.4%</td>
+                            </tr>
+                            <tr style="background:#fef2f2;">
+                                <td>Q4 (Highest)</td>
+                                <td>3,687</td>
+                                <td class="stat-negative">2.81x</td>
+                                <td class="stat-negative">63.4%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <h3>Growth by Tenure</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tenure</th>
+                                <th>Students</th>
+                                <th>Growth</th>
+                                <th>Meeting Goal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0-3 months</td>
+                                <td>48</td>
+                                <td>2.77x</td>
+                                <td>60.4%</td>
+                            </tr>
+                            <tr>
+                                <td>4-6 months</td>
+                                <td>124</td>
+                                <td>3.96x</td>
+                                <td>72.6%</td>
+                            </tr>
+                            <tr style="background:#f0fdf4;">
+                                <td>7-12 months</td>
+                                <td>26</td>
+                                <td class="stat-positive"><strong>4.48x</strong></td>
+                                <td>65.4%</td>
+                            </tr>
+                            <tr>
+                                <td>13-24 months</td>
+                                <td>41</td>
+                                <td>2.88x</td>
+                                <td>70.7%</td>
+                            </tr>
+                            <tr>
+                                <td>25+ months</td>
+                                <td>47</td>
+                                <td>3.37x</td>
+                                <td>66.0%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h3>Subject Time Allocation Impact</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Time Allocation</th>
+                        <th>Students</th>
+                        <th>Growth</th>
+                        <th>Recommendation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background:#f0fdf4;">
+                        <td>Vocab-Heavy (>65% vocab)</td>
+                        <td>9</td>
+                        <td class="stat-positive"><strong>4.67x</strong></td>
+                        <td>Consider rebalancing more students toward vocab</td>
+                    </tr>
+                    <tr>
+                        <td>Balanced (35-65%)</td>
+                        <td>183</td>
+                        <td>3.96x</td>
+                        <td>Good default allocation</td>
+                    </tr>
+                    <tr style="background:#fef2f2;">
+                        <td>Language-Heavy (&lt;35% vocab)</td>
+                        <td>94</td>
+                        <td class="stat-negative">2.66x</td>
+                        <td class="stat-negative">Increase vocabulary time for these students</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- High vs Low Performers -->
+        <div class="section">
+            <h2>High Performers vs Low Performers</h2>
+
+            <div class="two-col">
+                <div>
+                    <h3>Key Differentiators</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>High (5x+)</th>
+                                <th>Low (&lt;2x)</th>
+                                <th>Difference</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Total Minutes</td>
+                                <td>2,307</td>
+                                <td>2,630</td>
+                                <td class="stat-positive">-12% (less time!)</td>
+                            </tr>
+                            <tr>
+                                <td>Vocab Minutes</td>
+                                <td>1,021</td>
+                                <td>925</td>
+                                <td class="stat-positive">+10%</td>
+                            </tr>
+                            <tr>
+                                <td>Language Minutes</td>
+                                <td>1,286</td>
+                                <td>1,748</td>
+                                <td class="stat-positive">-26%</td>
+                            </tr>
+                            <tr>
+                                <td>Language XP/Min</td>
+                                <td>2.4</td>
+                                <td>1.8</td>
+                                <td class="stat-positive">+28%</td>
+                            </tr>
+                            <tr>
+                                <td>High School %</td>
+                                <td>20.8%</td>
+                                <td>6.7%</td>
+                                <td class="stat-positive">3x more</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <h3>App Usage Rates</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>App</th>
+                                <th>High Perf</th>
+                                <th>Low Perf</th>
+                                <th>Gap</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>EGUMPP</td>
+                                <td>52.5%</td>
+                                <td>34.4%</td>
+                                <td class="stat-positive">+18.1%</td>
+                            </tr>
+                            <tr>
+                                <td>Membean</td>
+                                <td>57.4%</td>
+                                <td>41.1%</td>
+                                <td class="stat-positive">+16.3%</td>
+                            </tr>
+                            <tr>
+                                <td>Freckle</td>
+                                <td>89.1%</td>
+                                <td>80.0%</td>
+                                <td>+9.1%</td>
+                            </tr>
+                            <tr>
+                                <td>Vocabloco</td>
+                                <td>79.2%</td>
+                                <td>71.1%</td>
+                                <td>+8.1%</td>
+                            </tr>
+                            <tr>
+                                <td>MobyMax</td>
+                                <td>91.1%</td>
+                                <td>84.4%</td>
+                                <td>+6.7%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Star Performers -->
+        <div class="section">
+            <h2>Star Performers (10x+ Growth)</h2>
+            <p style="color:#666; margin-bottom:24px; font-size: 0.95rem;">Studying exceptional performers reveals patterns for success</p>
+
+            <div class="star-list">
+                <div class="star-card">
+                    <div class="growth">26x</div>
+                    <strong>Justin Rodriguez</strong>
+                    <p style="font-size:0.85rem; color:#78716c; margin-top:4px;">High School | Miami | 5 months</p>
+                    <p style="font-size:0.9rem; margin-top:8px;">Low total time (1,071 min), balanced apps, strong EGUMPP use</p>
+                </div>
+                <div class="star-card">
+                    <div class="growth">22x</div>
+                    <strong>Aidan Chase</strong>
+                    <p style="font-size:0.85rem; color:#78716c; margin-top:4px;">Middle School | Santa Barbara | 4 months</p>
+                    <p style="font-size:0.9rem; margin-top:8px;">High Vocabloco XP (2,620), strong MobyMax engagement</p>
+                </div>
+                <div class="star-card">
+                    <div class="growth">20x</div>
+                    <strong>Vera Li</strong>
+                    <p style="font-size:0.85rem; color:#78716c; margin-top:4px;">High School | Alpha High | 5 months</p>
+                    <p style="font-size:0.9rem; margin-top:8px;">Exceptional EGUMPP focus (1,496 XP), minimal other apps</p>
+                </div>
+                <div class="star-card">
+                    <div class="growth">18x</div>
+                    <strong>Luca Sanchez</strong>
+                    <p style="font-size:0.85rem; color:#78716c; margin-top:4px;">High School | Miami | 7 months</p>
+                    <p style="font-size:0.9rem; margin-top:8px;">Strong Membean user (1,054 XP), balanced time allocation</p>
+                </div>
+            </div>
+
+            <div class="insight-card positive" style="margin-top:24px;">
+                <h4>Common Patterns in Star Performers</h4>
+                <p>1) Moderate total time (not excessive) | 2) Strong EGUMPP or Membean engagement | 3) Relatively new to program (4-7 months) | 4) High School or Middle School level | 5) Miami, Santa Barbara, or Alpha High campuses</p>
+            </div>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="section">
+            <h2>Actionable Recommendations</h2>
+
+            <ul class="recommendation-list">
+                <li>
+                    <span class="rec-priority high">HIGH</span>
+                    <div>
+                        <strong>Recalibrate Language App Difficulty</strong>
+                        <p style="color:#666; margin-top:8px;">40.9% of students earn >2 XP/min, indicating content is too easy or gaming. Increase difficulty levels in MobyMax and Freckle. Implement anti-gaming measures.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="rec-priority high">HIGH</span>
+                    <div>
+                        <strong>Expand EGUMPP Usage</strong>
+                        <p style="color:#666; margin-top:8px;">EGUMPP shows 75% higher growth for users. Currently limited to 7th grade base course - consider expanding to Middle School and High School broadly. Users: 39% vs potential 100%.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="rec-priority high">HIGH</span>
+                    <div>
+                        <strong>Rebalance Time for Language-Heavy Students</strong>
+                        <p style="color:#666; margin-top:8px;">94 students with &lt;35% vocab time average only 2.66x growth. Shift 15-20% of their language time to vocabulary instruction.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="rec-priority medium">MEDIUM</span>
+                    <div>
+                        <strong>Quality Over Quantity Intervention</strong>
+                        <p style="color:#666; margin-top:8px;">Highest-time students (Q4) show lowest growth. Review students spending 3,000+ minutes - they may need different interventions, not more time.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="rec-priority medium">MEDIUM</span>
+                    <div>
+                        <strong>Level 1 (K-3) Support Program</strong>
+                        <p style="color:#666; margin-top:8px;">Youngest students show lowest average growth (3.06x). Develop age-appropriate engagement strategies and review content difficulty calibration for this group.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="rec-priority medium">MEDIUM</span>
+                    <div>
+                        <strong>Vocabloco Engagement Quality Check</strong>
+                        <p style="color:#666; margin-top:8px;">Overall Vocabloco usage doesn't predict success, but high XP earners do well. Focus on meaningful engagement metrics, not just app usage.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="rec-priority low">LOW</span>
+                    <div>
+                        <strong>Study Alpha High School Practices</strong>
+                        <p style="color:#666; margin-top:8px;">89.3% meeting goal (highest) with 5.50x average growth. Document and share their instructional practices across other campuses.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="rec-priority low">LOW</span>
+                    <div>
+                        <strong>New Student Onboarding Focus</strong>
+                        <p style="color:#666; margin-top:8px;">0-3 month students show 2.77x growth vs 4.48x for 7-12 month students. Improve initial onboarding and set realistic early expectations.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Appendix -->
+        <div class="section">
+            <h2>Statistical Appendix</h2>
+
+            <div class="two-col">
+                <div>
+                    <h3>Correlation with Actual Growth</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Variable</th>
+                                <th>Pearson r</th>
+                                <th>Interpretation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>EGUMPP XP</td>
+                                <td>-0.153</td>
+                                <td>Moderate negative*</td>
+                            </tr>
+                            <tr>
+                                <td>Language Minutes</td>
+                                <td>-0.133</td>
+                                <td>Weak negative</td>
+                            </tr>
+                            <tr>
+                                <td>Total Minutes</td>
+                                <td>-0.129</td>
+                                <td>Weak negative</td>
+                            </tr>
+                            <tr>
+                                <td>Vocabloco XP</td>
+                                <td>+0.084</td>
+                                <td>Weak positive</td>
+                            </tr>
+                            <tr>
+                                <td>Freckle XP</td>
+                                <td>+0.062</td>
+                                <td>Weak positive</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p style="font-size:0.85rem; color:#888; margin-top:12px;">*EGUMPP negative correlation is confounded by level - EGUMPP users are concentrated in MS/HS where baseline expectations differ.</p>
+                </div>
+
+                <div>
+                    <h3>Data Quality Notes</h3>
+                    <ul style="color:#666; font-size:0.95rem; list-style:disc; padding-left:20px; line-height:2;">
+                        <li>286 students with actual growth scores analyzed</li>
+                        <li>Some students missing campus/level data</li>
+                        <li>XP data available for ~85-90% of students per app</li>
+                        <li>Time data appears complete for all students</li>
+                        <li>Tenure data available for ~85% of students</li>
+                        <li>Negative growth values (-42 to 0) included in analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Winter 2026 MAP Student Data Analysis</p>
+            <p style="color:#aaa;">Data Source: Summary Tab (286 students with growth scores)</p>
+            <div class="accent-line" style="margin-top:20px;"></div>
+        </footer>
+    </div>
+</body>
+</html>
