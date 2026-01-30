@@ -275,6 +275,7 @@
         .verdict.good { background: #d1fae5; color: #065f46; }
         .verdict.mixed { background: #fef3c7; color: #92400e; }
         .verdict.concern { background: #fee2e2; color: #991b1b; }
+        .verdict.advanced { background: #e0f2fe; color: #0369a1; }
 
         .two-col {
             display: grid;
@@ -294,6 +295,19 @@
         }
         .highlight-box p {
             color: #0c4a6e;
+        }
+
+        .context-box {
+            background: #f8f9fa;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .context-box strong {
+            color: #000;
         }
 
         .star-list {
@@ -352,7 +366,6 @@
             margin: 4px 0;
         }
 
-        /* Alpha-style accent line */
         .accent-line {
             width: 60px;
             height: 4px;
@@ -361,7 +374,6 @@
             margin: 16px auto 0;
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             .section { padding: 28px 20px; }
@@ -415,25 +427,25 @@
         <div class="section">
             <h2>Executive Summary</h2>
             <div class="highlight-box">
-                <p><strong>Bottom Line:</strong> The program is performing well overall (3.56x average growth vs 2x goal), but there are significant opportunities to improve outcomes through better app difficulty calibration, optimizing time allocation, and targeted interventions for struggling students.</p>
+                <p><strong>Bottom Line:</strong> The program is performing well overall (3.56x average growth vs 2x goal), with strong results across most campuses and levels. Key opportunities exist in improving content difficulty calibration, supporting new students through onboarding, and addressing engagement issues for students spending high time with low XP output.</p>
             </div>
 
             <div class="insight-grid">
                 <div class="insight-card positive">
-                    <h4>Key Win: EGUMPP Impact</h4>
-                    <p>EGUMPP users show 75% higher growth than non-users (4.81x vs 2.75x). This is the strongest app-growth correlation in the data.</p>
+                    <h4>Strong Overall Performance</h4>
+                    <p>68.5% of students meeting or exceeding the 2x growth goal. High School students lead with 85% meeting goal and 5.21x average growth.</p>
                 </div>
                 <div class="insight-card warning">
                     <h4>Critical Finding: Time Paradox</h4>
-                    <p>Students spending MORE time are growing LESS. Q1 (1,534 min): 4.59x growth vs Q4 (3,687 min): 2.81x growth. Quality over quantity matters.</p>
+                    <p>Students spending MORE time are growing LESS. Q1 (1,534 min): 4.59x growth vs Q4 (3,687 min): 2.81x growth. This signals engagement issues, not effort issues.</p>
                 </div>
                 <div class="insight-card negative">
                     <h4>Concern: Language App Calibration</h4>
-                    <p>40.9% of students earn >2 XP/min in Language apps - content may be too easy or students are gaming. Need difficulty recalibration.</p>
+                    <p>40.9% of students earn >2 XP/min in Language apps—content may be too easy or students are gaming. Need difficulty recalibration.</p>
                 </div>
-                <div class="insight-card positive">
-                    <h4>Opportunity: Vocabulary Focus</h4>
-                    <p>Vocab-heavy students (>65% time) achieve 4.67x growth vs Language-heavy (&lt;35%): 2.66x. Increasing vocab time could boost outcomes.</p>
+                <div class="insight-card warning">
+                    <h4>New Student Challenge</h4>
+                    <p>0-3 month students show 2.77x growth vs 4.48x for 7-12 month students. The onboarding period needs strengthening.</p>
                 </div>
             </div>
         </div>
@@ -442,8 +454,12 @@
         <div class="section">
             <h2>App Performance Analysis</h2>
 
+            <div class="context-box">
+                <strong>Context:</strong> Students are expected to spend approximately 10 minutes on vocabulary and 25 minutes on language daily (~29% vocab / 71% language split). EGUMPP and Membean are advanced apps that students progress into as they achieve—usage of these apps is a <em>marker</em> of advancement, not necessarily a <em>cause</em> of higher growth.
+            </div>
+
             <h3>Language Apps (Grades 3-12)</h3>
-            <p style="color:#666; margin-bottom:20px; font-size: 0.95rem;">MobyMax: Base course (3-6, 8th) | Freckle: Remediation (3-8) | EGUMPP: Base course (7th)</p>
+            <p style="color:#666; margin-bottom:20px; font-size: 0.95rem;">MobyMax: Base course (3-6, 8th) | Freckle: Remediation (3-8) | EGUMPP: Base course (7th grade, advanced)</p>
 
             <table class="data-table">
                 <thead>
@@ -452,8 +468,8 @@
                         <th>Users</th>
                         <th>User Growth</th>
                         <th>Non-User Growth</th>
-                        <th>Difference</th>
-                        <th>Verdict</th>
+                        <th>Notes</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -462,15 +478,15 @@
                         <td>112 (39%)</td>
                         <td>4.81x</td>
                         <td>2.75x</td>
-                        <td class="stat-positive">+75%</td>
-                        <td><span class="verdict excellent">Excellent</span></td>
+                        <td>Advanced app - higher growth reflects student level</td>
+                        <td><span class="verdict advanced">Advanced</span></td>
                     </tr>
                     <tr>
                         <td><strong>MobyMax</strong></td>
                         <td>253 (88%)</td>
                         <td>3.69x</td>
                         <td>2.55x</td>
-                        <td class="stat-positive">+45%</td>
+                        <td>Core app with broad usage and solid results</td>
                         <td><span class="verdict good">Strong</span></td>
                     </tr>
                     <tr>
@@ -478,19 +494,19 @@
                         <td>245 (86%)</td>
                         <td>3.68x</td>
                         <td>2.82x</td>
-                        <td class="stat-positive">+31%</td>
+                        <td>Remediation app performing well</td>
                         <td><span class="verdict good">Good</span></td>
                     </tr>
                 </tbody>
             </table>
 
             <div class="insight-card positive" style="margin-top:24px;">
-                <h4>EGUMPP Deep Dive</h4>
-                <p>High performers use EGUMPP at 52.5% vs 34.4% for low performers. Particularly effective for High School (6.37x) and Middle School (5.00x). <strong>Recommendation:</strong> Expand EGUMPP usage beyond just 7th grade base course.</p>
+                <h4>MobyMax & Freckle Analysis</h4>
+                <p>These core Language apps show healthy engagement across the student population. Students using these apps consistently outperform non-users, and the high adoption rate (86-88%) indicates good program integration.</p>
             </div>
 
             <h3>Vocabulary Apps (Grades 3-12)</h3>
-            <p style="color:#666; margin-bottom:20px; font-size: 0.95rem;">Vocabloco: Base/Remediation (3-5), Remediation (6-12) | Membean: Base course (6-12)</p>
+            <p style="color:#666; margin-bottom:20px; font-size: 0.95rem;">Vocabloco: Base/Remediation (3-5), Remediation (6-12) | Membean: Base course (6-12, advanced)</p>
 
             <table class="data-table">
                 <thead>
@@ -499,8 +515,8 @@
                         <th>Users</th>
                         <th>User Growth</th>
                         <th>Non-User Growth</th>
-                        <th>Difference</th>
-                        <th>Verdict</th>
+                        <th>Notes</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -509,23 +525,23 @@
                         <td>118 (41%)</td>
                         <td>3.89x</td>
                         <td>3.33x</td>
-                        <td class="stat-positive">+17%</td>
-                        <td><span class="verdict good">Good</span></td>
+                        <td>Advanced app - reflects student progression</td>
+                        <td><span class="verdict advanced">Advanced</span></td>
                     </tr>
                     <tr>
                         <td><strong>Vocabloco</strong></td>
                         <td>214 (75%)</td>
                         <td>3.49x</td>
                         <td>3.77x</td>
-                        <td class="stat-negative">-7%</td>
+                        <td>Core vocab app; top XP quartile shows 4.43x growth</td>
                         <td><span class="verdict mixed">Mixed</span></td>
                     </tr>
                 </tbody>
             </table>
 
             <div class="insight-card warning" style="margin-top:24px;">
-                <h4>Vocabloco Analysis</h4>
-                <p>Overall usage doesn't predict success, BUT top XP quartile students show 4.43x growth vs 3.17x for others. <strong>Issue:</strong> Many students may be using it without sufficient engagement. Focus on XP quality, not just usage.</p>
+                <h4>Vocabloco Engagement Quality</h4>
+                <p>Overall Vocabloco usage doesn't strongly predict success, BUT students in the top XP quartile show 4.43x growth vs 3.17x for others. This suggests the app works well when students are properly engaged—focus should be on <strong>quality of engagement</strong>, not just usage.</p>
             </div>
         </div>
 
@@ -578,7 +594,7 @@
                             <div class="label">Optimal Range</div>
                         </div>
                     </div>
-                    <p style="color:#ef4444; margin-top:16px; font-weight:500;"><strong>Concern:</strong> Content running too easy. 40.9% of students may be gaming or need harder content.</p>
+                    <p style="color:#ef4444; margin-top:16px; font-weight:500;"><strong>Concern:</strong> Content running too easy for 40.9% of students. Review difficulty settings.</p>
                 </div>
             </div>
 
@@ -597,7 +613,7 @@
                         <td>Low (&lt;0.5 XP/min)</td>
                         <td>3.58x</td>
                         <td class="stat-negative">2.26x</td>
-                        <td>Content too hard hurts Language more than Vocab</td>
+                        <td>Content too hard significantly hurts Language outcomes</td>
                     </tr>
                     <tr>
                         <td>Optimal (0.5-2 XP/min)</td>
@@ -609,10 +625,15 @@
                         <td>High (>2 XP/min)</td>
                         <td class="stat-positive">5.55x</td>
                         <td>3.71x</td>
-                        <td>High vocab efficiency correlates with top performers</td>
+                        <td>May indicate advanced students or need for harder content</td>
                     </tr>
                 </tbody>
             </table>
+
+            <div class="insight-card negative" style="margin-top:20px;">
+                <h4>Key Finding: Low Language Efficiency = Poor Outcomes</h4>
+                <p>Students with &lt;0.5 XP/min in Language apps average only 2.26x growth—barely meeting goal. This is the clearest signal that <strong>content difficulty mismatch</strong> is hurting outcomes. These students need easier content or additional support.</p>
+            </div>
         </div>
 
         <!-- Level & Campus Analysis -->
@@ -660,8 +681,8 @@
                     </table>
 
                     <div class="insight-card warning" style="margin-top:20px;">
-                        <h4>Level 1 Needs Attention</h4>
-                        <p>Youngest learners show lowest average growth. Consider age-appropriate engagement strategies and ensure content difficulty is well-matched.</p>
+                        <h4>Level 1 Opportunity</h4>
+                        <p>Youngest learners show lowest average growth (3.06x) though still above goal. Consider age-appropriate engagement strategies and ensure content difficulty is well-matched to developmental level.</p>
                     </div>
                 </div>
 
@@ -712,7 +733,7 @@
 
                     <div class="insight-card positive" style="margin-top:20px;">
                         <h4>Alpha High School Excellence</h4>
-                        <p>89.3% meeting goal is the highest rate. Study their practices for potential replication across other campuses.</p>
+                        <p>89.3% meeting goal is the highest rate among major campuses. Study their practices for potential replication.</p>
                     </div>
                 </div>
             </div>
@@ -724,7 +745,7 @@
 
             <div class="highlight-box">
                 <h4 style="color:#0369a1; margin-bottom:12px;">Critical Insight: The Time Paradox</h4>
-                <p>Counter-intuitively, students spending MORE time are achieving LESS growth. This suggests struggling students are being given more time but not more effective instruction. Focus should shift from quantity to quality of learning time.</p>
+                <p>Counter-intuitively, students spending MORE time are achieving LESS growth. This doesn't mean "less time is better"—it signals that <strong>struggling students are spending more time but not engaging effectively</strong>. High time with low results indicates disengagement, content mismatch, or other barriers that more time alone won't solve.</p>
             </div>
 
             <div class="two-col">
@@ -780,11 +801,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr style="background:#fef2f2;">
                                 <td>0-3 months</td>
                                 <td>48</td>
-                                <td>2.77x</td>
-                                <td>60.4%</td>
+                                <td class="stat-warning">2.77x</td>
+                                <td class="stat-negative">60.4%</td>
                             </tr>
                             <tr>
                                 <td>4-6 months</td>
@@ -815,42 +836,19 @@
                 </div>
             </div>
 
-            <h3>Subject Time Allocation Impact</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>Time Allocation</th>
-                        <th>Students</th>
-                        <th>Growth</th>
-                        <th>Recommendation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="background:#f0fdf4;">
-                        <td>Vocab-Heavy (>65% vocab)</td>
-                        <td>9</td>
-                        <td class="stat-positive"><strong>4.67x</strong></td>
-                        <td>Consider rebalancing more students toward vocab</td>
-                    </tr>
-                    <tr>
-                        <td>Balanced (35-65%)</td>
-                        <td>183</td>
-                        <td>3.96x</td>
-                        <td>Good default allocation</td>
-                    </tr>
-                    <tr style="background:#fef2f2;">
-                        <td>Language-Heavy (&lt;35% vocab)</td>
-                        <td>94</td>
-                        <td class="stat-negative">2.66x</td>
-                        <td class="stat-negative">Increase vocabulary time for these students</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="insight-card negative" style="margin-top:24px;">
+                <h4>New Student Onboarding Gap</h4>
+                <p>Students in their first 0-3 months show the lowest meeting-goal rate (60.4%) and below-average growth (2.77x). The transition to 4-6 months shows dramatic improvement (72.6% meeting goal). <strong>Strengthening the first 90 days is a high-impact opportunity.</strong></p>
+            </div>
         </div>
 
         <!-- High vs Low Performers -->
         <div class="section">
             <h2>High Performers vs Low Performers</h2>
+
+            <div class="context-box">
+                <strong>Note on Time Allocation:</strong> Expected daily allocation is ~10 min vocabulary / ~25 min language (29%/71% split). Students naturally spend more time on language as designed.
+            </div>
 
             <div class="two-col">
                 <div>
@@ -861,7 +859,7 @@
                                 <th>Metric</th>
                                 <th>High (5x+)</th>
                                 <th>Low (&lt;2x)</th>
-                                <th>Difference</th>
+                                <th>Insight</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -869,80 +867,46 @@
                                 <td>Total Minutes</td>
                                 <td>2,307</td>
                                 <td>2,630</td>
-                                <td class="stat-positive">-12% (less time!)</td>
-                            </tr>
-                            <tr>
-                                <td>Vocab Minutes</td>
-                                <td>1,021</td>
-                                <td>925</td>
-                                <td class="stat-positive">+10%</td>
-                            </tr>
-                            <tr>
-                                <td>Language Minutes</td>
-                                <td>1,286</td>
-                                <td>1,748</td>
-                                <td class="stat-positive">-26%</td>
+                                <td>Low performers spend more time</td>
                             </tr>
                             <tr>
                                 <td>Language XP/Min</td>
-                                <td>2.4</td>
+                                <td class="stat-positive">2.4</td>
                                 <td>1.8</td>
-                                <td class="stat-positive">+28%</td>
+                                <td class="stat-positive">+33% efficiency</td>
+                            </tr>
+                            <tr>
+                                <td>Vocab XP/Min</td>
+                                <td>1.6</td>
+                                <td>1.4</td>
+                                <td>+14% efficiency</td>
+                            </tr>
+                            <tr>
+                                <td>Total XP</td>
+                                <td>4,001</td>
+                                <td>3,154</td>
+                                <td>+27% output</td>
                             </tr>
                             <tr>
                                 <td>High School %</td>
                                 <td>20.8%</td>
                                 <td>6.7%</td>
-                                <td class="stat-positive">3x more</td>
+                                <td>Level correlates with success</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
                 <div>
-                    <h3>App Usage Rates</h3>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>App</th>
-                                <th>High Perf</th>
-                                <th>Low Perf</th>
-                                <th>Gap</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>EGUMPP</td>
-                                <td>52.5%</td>
-                                <td>34.4%</td>
-                                <td class="stat-positive">+18.1%</td>
-                            </tr>
-                            <tr>
-                                <td>Membean</td>
-                                <td>57.4%</td>
-                                <td>41.1%</td>
-                                <td class="stat-positive">+16.3%</td>
-                            </tr>
-                            <tr>
-                                <td>Freckle</td>
-                                <td>89.1%</td>
-                                <td>80.0%</td>
-                                <td>+9.1%</td>
-                            </tr>
-                            <tr>
-                                <td>Vocabloco</td>
-                                <td>79.2%</td>
-                                <td>71.1%</td>
-                                <td>+8.1%</td>
-                            </tr>
-                            <tr>
-                                <td>MobyMax</td>
-                                <td>91.1%</td>
-                                <td>84.4%</td>
-                                <td>+6.7%</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <h3>The Efficiency Story</h3>
+                    <div class="insight-card positive">
+                        <h4>High performers work smarter, not longer</h4>
+                        <p>They spend 12% less time but produce 27% more XP. The key differentiator is <strong>efficiency</strong>—getting more learning done per minute spent. This suggests content is well-matched to their level and they're genuinely engaged.</p>
+                    </div>
+                    <div class="insight-card negative" style="margin-top:16px;">
+                        <h4>Low performers show engagement issues</h4>
+                        <p>More time + less output = potential disengagement, content mismatch, or barriers to learning. These students need intervention focused on <strong>quality of engagement</strong>, not quantity of time.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -957,31 +921,31 @@
                     <div class="growth">26x</div>
                     <strong>Justin Rodriguez</strong>
                     <p style="font-size:0.85rem; color:#78716c; margin-top:4px;">High School | Miami | 5 months</p>
-                    <p style="font-size:0.9rem; margin-top:8px;">Low total time (1,071 min), balanced apps, strong EGUMPP use</p>
+                    <p style="font-size:0.9rem; margin-top:8px;">Efficient time use (1,071 min), strong engagement across apps</p>
                 </div>
                 <div class="star-card">
                     <div class="growth">22x</div>
                     <strong>Aidan Chase</strong>
                     <p style="font-size:0.85rem; color:#78716c; margin-top:4px;">Middle School | Santa Barbara | 4 months</p>
-                    <p style="font-size:0.9rem; margin-top:8px;">High Vocabloco XP (2,620), strong MobyMax engagement</p>
+                    <p style="font-size:0.9rem; margin-top:8px;">High XP output, strong MobyMax and Vocabloco engagement</p>
                 </div>
                 <div class="star-card">
                     <div class="growth">20x</div>
                     <strong>Vera Li</strong>
                     <p style="font-size:0.85rem; color:#78716c; margin-top:4px;">High School | Alpha High | 5 months</p>
-                    <p style="font-size:0.9rem; margin-top:8px;">Exceptional EGUMPP focus (1,496 XP), minimal other apps</p>
+                    <p style="font-size:0.9rem; margin-top:8px;">Advanced student using EGUMPP effectively</p>
                 </div>
                 <div class="star-card">
                     <div class="growth">18x</div>
                     <strong>Luca Sanchez</strong>
                     <p style="font-size:0.85rem; color:#78716c; margin-top:4px;">High School | Miami | 7 months</p>
-                    <p style="font-size:0.9rem; margin-top:8px;">Strong Membean user (1,054 XP), balanced time allocation</p>
+                    <p style="font-size:0.9rem; margin-top:8px;">Balanced engagement, progressed to Membean</p>
                 </div>
             </div>
 
             <div class="insight-card positive" style="margin-top:24px;">
                 <h4>Common Patterns in Star Performers</h4>
-                <p>1) Moderate total time (not excessive) | 2) Strong EGUMPP or Membean engagement | 3) Relatively new to program (4-7 months) | 4) High School or Middle School level | 5) Miami, Santa Barbara, or Alpha High campuses</p>
+                <p>1) High efficiency—more output per minute spent | 2) Consistent engagement across their assigned apps | 3) Often newer students (4-7 months) hitting their stride | 4) High School and Middle School levels well-represented | 5) Strong campuses: Miami, Santa Barbara, Alpha High</p>
             </div>
         </div>
 
@@ -994,56 +958,49 @@
                     <span class="rec-priority high">HIGH</span>
                     <div>
                         <strong>Recalibrate Language App Difficulty</strong>
-                        <p style="color:#666; margin-top:8px;">40.9% of students earn >2 XP/min, indicating content is too easy or gaming. Increase difficulty levels in MobyMax and Freckle. Implement anti-gaming measures.</p>
+                        <p style="color:#666; margin-top:8px;">40.9% of students earn >2 XP/min in Language apps—content may be too easy or students are gaming. Review MobyMax and Freckle difficulty settings. Consider adaptive difficulty or anti-gaming measures.</p>
                     </div>
                 </li>
                 <li>
                     <span class="rec-priority high">HIGH</span>
                     <div>
-                        <strong>Expand EGUMPP Usage</strong>
-                        <p style="color:#666; margin-top:8px;">EGUMPP shows 75% higher growth for users. Currently limited to 7th grade base course - consider expanding to Middle School and High School broadly. Users: 39% vs potential 100%.</p>
+                        <strong>Address Content-Too-Hard Cases</strong>
+                        <p style="color:#666; margin-top:8px;">Students with &lt;0.5 XP/min in Language average only 2.26x growth. Identify these students and reset content to appropriate difficulty level. This is the clearest path to improved outcomes.</p>
                     </div>
                 </li>
                 <li>
                     <span class="rec-priority high">HIGH</span>
                     <div>
-                        <strong>Rebalance Time for Language-Heavy Students</strong>
-                        <p style="color:#666; margin-top:8px;">94 students with &lt;35% vocab time average only 2.66x growth. Shift 15-20% of their language time to vocabulary instruction.</p>
+                        <strong>Strengthen New Student Onboarding</strong>
+                        <p style="color:#666; margin-top:8px;">0-3 month students show only 60.4% meeting goal vs 72.6% at 4-6 months. Implement enhanced support: mentor pairing, weekly check-ins, clear expectations, and early intervention triggers at 30/60/90 days.</p>
                     </div>
                 </li>
                 <li>
                     <span class="rec-priority medium">MEDIUM</span>
                     <div>
-                        <strong>Quality Over Quantity Intervention</strong>
-                        <p style="color:#666; margin-top:8px;">Highest-time students (Q4) show lowest growth. Review students spending 3,000+ minutes - they may need different interventions, not more time.</p>
+                        <strong>High-Time/Low-Output Intervention</strong>
+                        <p style="color:#666; margin-top:8px;">Q4 time students (3,687 avg min) show lowest growth (2.81x). These students need different interventions, not more time. Implement engagement monitoring and 1:1 check-ins to identify barriers.</p>
                     </div>
                 </li>
                 <li>
                     <span class="rec-priority medium">MEDIUM</span>
                     <div>
-                        <strong>Level 1 (K-3) Support Program</strong>
-                        <p style="color:#666; margin-top:8px;">Youngest students show lowest average growth (3.06x). Develop age-appropriate engagement strategies and review content difficulty calibration for this group.</p>
-                    </div>
-                </li>
-                <li>
-                    <span class="rec-priority medium">MEDIUM</span>
-                    <div>
-                        <strong>Vocabloco Engagement Quality Check</strong>
-                        <p style="color:#666; margin-top:8px;">Overall Vocabloco usage doesn't predict success, but high XP earners do well. Focus on meaningful engagement metrics, not just app usage.</p>
+                        <strong>Vocabloco Engagement Quality</strong>
+                        <p style="color:#666; margin-top:8px;">Top XP quartile in Vocabloco shows 4.43x growth vs 3.17x for others. Focus on meaningful engagement metrics. Ensure students are challenged appropriately, not just completing tasks.</p>
                     </div>
                 </li>
                 <li>
                     <span class="rec-priority low">LOW</span>
                     <div>
                         <strong>Study Alpha High School Practices</strong>
-                        <p style="color:#666; margin-top:8px;">89.3% meeting goal (highest) with 5.50x average growth. Document and share their instructional practices across other campuses.</p>
+                        <p style="color:#666; margin-top:8px;">89.3% meeting goal with 5.50x average growth. Document and share their instructional practices, engagement strategies, and support structures across other campuses.</p>
                     </div>
                 </li>
                 <li>
                     <span class="rec-priority low">LOW</span>
                     <div>
-                        <strong>New Student Onboarding Focus</strong>
-                        <p style="color:#666; margin-top:8px;">0-3 month students show 2.77x growth vs 4.48x for 7-12 month students. Improve initial onboarding and set realistic early expectations.</p>
+                        <strong>Level 1 (K-3) Enhancement</strong>
+                        <p style="color:#666; margin-top:8px;">Youngest students show lowest average growth (3.06x) though still meeting goal. Explore age-appropriate engagement strategies and ensure content is developmentally matched.</p>
                     </div>
                 </li>
             </ul>
@@ -1066,19 +1023,14 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>EGUMPP XP</td>
-                                <td>-0.153</td>
-                                <td>Moderate negative*</td>
-                            </tr>
-                            <tr>
                                 <td>Language Minutes</td>
                                 <td>-0.133</td>
-                                <td>Weak negative</td>
+                                <td>More time ≠ more growth</td>
                             </tr>
                             <tr>
                                 <td>Total Minutes</td>
                                 <td>-0.129</td>
-                                <td>Weak negative</td>
+                                <td>Efficiency matters more than time</td>
                             </tr>
                             <tr>
                                 <td>Vocabloco XP</td>
@@ -1092,7 +1044,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <p style="font-size:0.85rem; color:#888; margin-top:12px;">*EGUMPP negative correlation is confounded by level - EGUMPP users are concentrated in MS/HS where baseline expectations differ.</p>
+                    <p style="font-size:0.85rem; color:#888; margin-top:12px;">Note: XP correlations are weak because success depends on efficiency (XP/min), not absolute XP. Students who struggle may accumulate XP through more time without improving outcomes.</p>
                 </div>
 
                 <div>
@@ -1103,7 +1055,7 @@
                         <li>XP data available for ~85-90% of students per app</li>
                         <li>Time data appears complete for all students</li>
                         <li>Tenure data available for ~85% of students</li>
-                        <li>Negative growth values (-42 to 0) included in analysis</li>
+                        <li>Expected time allocation: 10 min vocab / 25 min language daily</li>
                     </ul>
                 </div>
             </div>

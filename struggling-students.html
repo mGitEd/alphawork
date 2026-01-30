@@ -16,7 +16,6 @@
         }
         .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
 
-        /* Navigation */
         .nav {
             background: #fff;
             padding: 16px 24px;
@@ -167,6 +166,19 @@
             color: #b91c1c;
         }
 
+        .context-box {
+            background: #f8f9fa;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .context-box strong {
+            color: #000;
+        }
+
         .insight-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -304,6 +316,9 @@
             font-weight: 600;
             font-size: 0.9rem;
         }
+        .pattern-count.warning {
+            background: #f59e0b;
+        }
         .pattern-title {
             font-weight: 600;
             font-size: 1.1rem;
@@ -415,7 +430,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Navigation -->
         <nav class="nav">
             <a href="index.html" class="nav-brand">MAP Analysis</a>
             <div class="nav-links">
@@ -443,14 +457,14 @@
                 <div class="kpi-compare">vs 3.56x overall average</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-value">62.8%</div>
-                <div class="kpi-label">Missing Key Apps</div>
-                <div class="kpi-compare">No EGUMPP + No Membean</div>
+                <div class="kpi-value">23.3%</div>
+                <div class="kpi-label">Are New Students</div>
+                <div class="kpi-compare">0-3 months tenure</div>
             </div>
             <div class="kpi-card">
-                <div class="kpi-value">44.2%</div>
-                <div class="kpi-label">Language-Heavy</div>
-                <div class="kpi-compare">vs 17.8% of high performers</div>
+                <div class="kpi-value">25.6%</div>
+                <div class="kpi-label">High Time / Low Output</div>
+                <div class="kpi-compare">2,500+ min, low XP</div>
             </div>
         </div>
 
@@ -459,39 +473,44 @@
             <h2>Critical Findings</h2>
 
             <div class="alert-box">
-                <h4>The Core Problem</h4>
-                <p>Struggling students spend <strong>19% more time</strong> than high performers (2,751 vs 2,307 minutes) but achieve dramatically lower growth. This isn't a time problem—it's an <strong>effectiveness problem</strong>. They're working harder, not smarter, with misaligned app usage and content difficulty.</p>
+                <h4>The Core Problem: Engagement, Not Effort</h4>
+                <p>Struggling students spend <strong>19% more time</strong> than high performers (2,751 vs 2,307 minutes) but achieve dramatically lower growth. This isn't about working harder—it's about <strong>barriers to effective learning</strong>: content difficulty mismatch, disengagement, or challenges in the learning environment that more time alone won't solve.</p>
+            </div>
+
+            <div class="context-box">
+                <strong>Important Context:</strong> Students are expected to spend ~10 min on vocabulary and ~25 min on language daily (29%/71% split). EGUMPP and Membean are advanced apps that students progress into—lack of usage reflects their current level, not a missing intervention. Focus should be on <strong>actionable factors</strong>: engagement quality, content difficulty, and support during onboarding.
             </div>
 
             <div class="insight-grid">
                 <div class="insight-card">
-                    <div class="stat-big">62.8%</div>
-                    <h4>Missing Key Apps</h4>
-                    <p>Nearly two-thirds of struggling students use neither EGUMPP nor Membean—the two apps most strongly correlated with high performance.</p>
+                    <div class="stat-big">23.3%</div>
+                    <h4>New Student Vulnerability</h4>
+                    <p>10 of 43 struggling students (23.3%) are in their first 0-3 months. New students represent 20.8% of all struggling students cohort-wide—the highest rate of any tenure group.</p>
                 </div>
                 <div class="insight-card warning">
-                    <div class="stat-big">44.2%</div>
-                    <h4>Language-Heavy Time Split</h4>
-                    <p>Struggling students spend only 35.8% of time on vocabulary vs 45.5% for high performers. Language-heavy allocation correlates with poor outcomes.</p>
+                    <div class="stat-big">25.6%</div>
+                    <h4>High Time / Low Output</h4>
+                    <p>11 students spend 2,500+ minutes but produce low XP. This signals disengagement—they're present but not productively learning. These students need intervention beyond more time.</p>
                 </div>
                 <div class="insight-card">
-                    <div class="stat-big">22.0%</div>
+                    <div class="stat-big">41.9%</div>
                     <h4>Content Too Hard</h4>
-                    <p>22% have language efficiency below 0.5 XP/min (vs only 1% of high performers). The content difficulty is mismatched to their level.</p>
+                    <p>18 students have XP efficiency below 0.5 XP/min—content is too difficult for their current level. They're spending time but not successfully completing work.</p>
                 </div>
                 <div class="insight-card warning">
-                    <div class="stat-big">27.9%</div>
-                    <h4>EGUMPP Usage Gap</h4>
-                    <p>Only 27.9% use EGUMPP vs 52.5% of high performers. This 25-point gap represents the single largest actionable difference.</p>
+                    <div class="stat-big">22.0%</div>
+                    <h4>Low Language Efficiency</h4>
+                    <p>22% of struggling students have language efficiency below 0.5 XP/min, compared to only 1% of high performers. This is the clearest actionable signal.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Struggling vs High Performers -->
+        <!-- The Efficiency Gap -->
         <div class="section">
-            <h2>Struggling vs High Performers Comparison</h2>
+            <h2>The Efficiency Gap</h2>
+            <p style="color:#666; margin-bottom:24px;">The key difference between struggling and successful students isn't time spent—it's learning efficiency.</p>
 
-            <h3>Time Investment</h3>
+            <h3>Time Investment (The Paradox)</h3>
             <div class="comparison-grid">
                 <div class="comparison-card struggling">
                     <h4>Struggling (0-1.5x)</h4>
@@ -504,9 +523,9 @@
                     <div class="comparison-label">Total Minutes</div>
                 </div>
             </div>
-            <p style="text-align:center; color:#666; margin-top:-10px; margin-bottom:20px;">Struggling students spend 19% MORE time but achieve dramatically less growth</p>
+            <p style="text-align:center; color:#666; margin-top:-10px; margin-bottom:24px;">Struggling students spend 19% MORE time but achieve dramatically less</p>
 
-            <h3>Key Metrics Comparison</h3>
+            <h3>Efficiency Comparison</h3>
             <table class="data-table">
                 <thead>
                     <tr>
@@ -518,109 +537,42 @@
                 </thead>
                 <tbody>
                     <tr class="highlight-bad">
-                        <td>Vocabulary Time %</td>
-                        <td>35.8%</td>
-                        <td>45.5%</td>
-                        <td class="stat-negative">-9.7%</td>
-                    </tr>
-                    <tr>
-                        <td>Vocab Minutes</td>
-                        <td>901</td>
-                        <td>1,021</td>
-                        <td class="stat-negative">-12%</td>
-                    </tr>
-                    <tr class="highlight-bad">
-                        <td>Language Minutes</td>
-                        <td>1,914</td>
-                        <td>1,286</td>
-                        <td class="stat-negative">+49% (too much)</td>
+                        <td>Language XP/Min</td>
+                        <td>1.7</td>
+                        <td>2.4</td>
+                        <td class="stat-negative">-29% efficiency</td>
                     </tr>
                     <tr>
                         <td>Vocab XP/Min</td>
                         <td>1.4</td>
                         <td>1.6</td>
-                        <td class="stat-negative">-12%</td>
+                        <td>-12% efficiency</td>
                     </tr>
                     <tr class="highlight-bad">
-                        <td>Language XP/Min</td>
-                        <td>1.7</td>
-                        <td>2.4</td>
-                        <td class="stat-negative">-29%</td>
-                    </tr>
-                    <tr>
-                        <td>Total XP</td>
+                        <td>Total XP Output</td>
                         <td>3,154</td>
                         <td>4,001</td>
-                        <td class="stat-negative">-21%</td>
+                        <td class="stat-negative">-21% output</td>
+                    </tr>
+                    <tr>
+                        <td>Total Minutes</td>
+                        <td>2,751</td>
+                        <td>2,307</td>
+                        <td>+19% more time</td>
                     </tr>
                 </tbody>
             </table>
 
-            <h3>App Usage Rates</h3>
-            <table class="data-table">
-                <thead>
-                    <tr>
-                        <th>App</th>
-                        <th>Struggling</th>
-                        <th>High Performers</th>
-                        <th>Meeting Goal</th>
-                        <th>Gap vs High</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="highlight-bad">
-                        <td><strong>EGUMPP</strong></td>
-                        <td>27.9%</td>
-                        <td>52.5%</td>
-                        <td>41.3%</td>
-                        <td class="stat-negative">-24.6%</td>
-                    </tr>
-                    <tr class="highlight-bad">
-                        <td><strong>Membean</strong></td>
-                        <td>32.6%</td>
-                        <td>57.4%</td>
-                        <td>41.3%</td>
-                        <td class="stat-negative">-24.8%</td>
-                    </tr>
-                    <tr>
-                        <td>Freckle</td>
-                        <td>79.1%</td>
-                        <td>89.1%</td>
-                        <td>88.3%</td>
-                        <td class="stat-negative">-10.0%</td>
-                    </tr>
-                    <tr>
-                        <td>Vocabloco</td>
-                        <td>72.1%</td>
-                        <td>79.2%</td>
-                        <td>76.5%</td>
-                        <td>-7.1%</td>
-                    </tr>
-                    <tr>
-                        <td>MobyMax</td>
-                        <td>88.4%</td>
-                        <td>91.1%</td>
-                        <td>90.3%</td>
-                        <td>-2.7%</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="insight-card" style="margin-top:20px; border-left-color: #0072e5;">
+                <h4>The Core Insight</h4>
+                <p>Struggling students work <strong>longer</strong> but get <strong>less done</strong>. They spend 19% more time but produce 21% less XP with 29% lower language efficiency. The intervention needed isn't "more time"—it's addressing <strong>why time isn't translating to learning</strong>: content difficulty, engagement barriers, or environmental factors.</p>
+            </div>
         </div>
 
         <!-- Risk Pattern Analysis -->
         <div class="section">
-            <h2>Risk Pattern Analysis</h2>
-            <p style="color:#666; margin-bottom:24px;">Students often exhibit multiple overlapping risk patterns. Addressing these systematically can improve outcomes.</p>
-
-            <div class="pattern-card">
-                <div class="pattern-header">
-                    <span class="pattern-count">27 students</span>
-                    <span class="pattern-title">Missing Key Apps (EGUMPP + Membean)</span>
-                    <span class="pattern-pct">62.8% of struggling group</span>
-                </div>
-                <p style="color:#666;">These students have zero XP in both EGUMPP and Membean—the two apps most strongly associated with high growth. This is the single largest addressable risk factor.</p>
-                <p style="margin-top:12px;"><strong>Intervention:</strong> Immediately onboard these students to EGUMPP (for language) and Membean (for vocabulary) with guided introduction sessions.</p>
-            </div>
+            <h2>Actionable Risk Patterns</h2>
+            <p style="color:#666; margin-bottom:24px;">These patterns represent specific, addressable issues that can be targeted for intervention.</p>
 
             <div class="pattern-card">
                 <div class="pattern-header">
@@ -628,18 +580,8 @@
                     <span class="pattern-title">Content Too Hard</span>
                     <span class="pattern-pct">41.9% of struggling group</span>
                 </div>
-                <p style="color:#666;">Efficiency below 0.5 XP/min indicates content is too difficult. Students are spending time but not successfully completing work, leading to frustration and disengagement.</p>
-                <p style="margin-top:12px;"><strong>Intervention:</strong> Diagnostic assessment to determine appropriate grade level, then reset content difficulty. Consider temporary remediation track.</p>
-            </div>
-
-            <div class="pattern-card">
-                <div class="pattern-header">
-                    <span class="pattern-count">15 students</span>
-                    <span class="pattern-title">Language-Heavy + Low Efficiency</span>
-                    <span class="pattern-pct">34.9% of struggling group</span>
-                </div>
-                <p style="color:#666;">These students spend disproportionate time on language (<35% vocab) AND have low language efficiency. They're stuck in a cycle of ineffective language practice.</p>
-                <p style="margin-top:12px;"><strong>Intervention:</strong> Rebalance time allocation to 45-50% vocabulary. Reduce language difficulty level. Add structured vocabulary instruction.</p>
+                <p style="color:#666;">XP efficiency below 0.5 XP/min indicates content is too difficult. Students are spending time but not successfully completing work, leading to frustration and disengagement. This is the <strong>most actionable</strong> pattern.</p>
+                <p style="margin-top:12px;"><strong>Intervention:</strong> Diagnostic assessment to determine appropriate level. Reset content difficulty (often 1-2 grades below current). Monitor efficiency for 2 weeks before re-evaluating.</p>
             </div>
 
             <div class="pattern-card">
@@ -648,8 +590,8 @@
                     <span class="pattern-title">High Time / Low XP (Disengagement)</span>
                     <span class="pattern-pct">25.6% of struggling group</span>
                 </div>
-                <p style="color:#666;">Students with 2,500+ minutes but low XP output are likely disengaged—time on task without productive learning. May indicate gaming, distraction, or learned helplessness.</p>
-                <p style="margin-top:12px;"><strong>Intervention:</strong> 1:1 check-in to identify barriers. Consider engagement monitoring, shorter focused sessions, or different learning modalities.</p>
+                <p style="color:#666;">Students with 2,500+ minutes but low XP output are likely disengaged—time on task without productive learning. May indicate gaming, distraction, learned helplessness, or environmental barriers.</p>
+                <p style="margin-top:12px;"><strong>Intervention:</strong> 1:1 check-in to identify specific barriers. Consider engagement monitoring, shorter focused sessions, environmental assessment, or different learning modalities.</p>
             </div>
 
             <div class="pattern-card">
@@ -658,8 +600,18 @@
                     <span class="pattern-title">New Students (0-3 months)</span>
                     <span class="pattern-pct">23.3% of struggling group</span>
                 </div>
-                <p style="color:#666;">20.8% of all new students are struggling—the highest rate of any tenure group. The onboarding period is critical and currently underperforming.</p>
-                <p style="margin-top:12px;"><strong>Intervention:</strong> Enhanced onboarding program with mentor pairing, clear expectations, and more frequent check-ins during first 90 days.</p>
+                <p style="color:#666;">20.8% of all new students across the cohort are struggling—the highest rate of any tenure group. The onboarding period is critical but currently shows the weakest outcomes.</p>
+                <p style="margin-top:12px;"><strong>Intervention:</strong> Enhanced onboarding: mentor pairing, clear expectations, weekly check-ins for first 90 days. Early warning system at 30/60/90 day marks. Don't wait for assessment data—intervene proactively.</p>
+            </div>
+
+            <div class="pattern-card">
+                <div class="pattern-header">
+                    <span class="pattern-count warning">9 students</span>
+                    <span class="pattern-title">Low Language Efficiency Specifically</span>
+                    <span class="pattern-pct">22% of struggling group with data</span>
+                </div>
+                <p style="color:#666;">These students have &lt;0.5 XP/min in language apps specifically, while vocab efficiency may be adequate. Language content is mismatched to their reading/comprehension level.</p>
+                <p style="margin-top:12px;"><strong>Intervention:</strong> Review MobyMax and Freckle placement. Consider reading level assessment. May need remediation track or additional scaffolding before current content level.</p>
             </div>
         </div>
 
@@ -676,11 +628,11 @@
                                 <th>Level</th>
                                 <th>Struggling</th>
                                 <th>% of Level</th>
-                                <th>Risk Level</th>
+                                <th>Risk</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr class="highlight-bad">
                                 <td>Level 2 (4-5)</td>
                                 <td>16</td>
                                 <td class="stat-negative">19.5%</td>
@@ -708,7 +660,7 @@
                     </table>
                     <div class="insight-card warning" style="margin-top:16px;">
                         <h4>Level 2 Alert</h4>
-                        <p>Upper elementary (4th-5th grade) has the highest struggle rate at 19.5%. This transition period needs additional support structures.</p>
+                        <p>Upper elementary (4th-5th grade) has the highest struggle rate at 19.5%. This transition period—moving from foundational to more complex content—needs additional support structures.</p>
                     </div>
                 </div>
 
@@ -750,12 +702,56 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div class="insight-card" style="margin-top:16px;">
-                        <h4>Texas Sports Academy Crisis</h4>
-                        <p>43.8% struggling rate requires immediate intervention. Avg vocab time is only 23%—severely language-heavy. EGUMPP usage: 2/7, Membean: 2/7.</p>
+                    <div class="insight-card" style="margin-top:16px; border-left-color:#ef4444;">
+                        <h4>Texas Sports Academy: Urgent</h4>
+                        <p>43.8% struggle rate requires immediate attention. With 7 of 16 students struggling, this is a systemic issue at the site level—not individual student problems. Site visit and comprehensive review needed.</p>
                     </div>
                 </div>
             </div>
+
+            <h3>By Tenure</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Tenure</th>
+                        <th>Struggling</th>
+                        <th>% of Tenure Group</th>
+                        <th>Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="highlight-bad">
+                        <td>0-3 months (New)</td>
+                        <td>10</td>
+                        <td class="stat-negative">20.8%</td>
+                        <td>Highest risk—onboarding critical period</td>
+                    </tr>
+                    <tr>
+                        <td>7-12 months</td>
+                        <td>5</td>
+                        <td>19.2%</td>
+                        <td>Second peak—may need level transitions</td>
+                    </tr>
+                    <tr>
+                        <td>4-6 months</td>
+                        <td>18</td>
+                        <td>14.5%</td>
+                        <td>Moderate—past initial adjustment</td>
+                    </tr>
+                    <tr>
+                        <td>25+ months</td>
+                        <td>6</td>
+                        <td>12.8%</td>
+                        <td>Long-term—different intervention needs</td>
+                    </tr>
+                    <tr>
+                        <td>13-24 months</td>
+                        <td>4</td>
+                        <td class="stat-positive">9.8%</td>
+                        <td>Lowest risk—well-established students</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- Sample Profiles -->
@@ -768,15 +764,13 @@
                     <span class="student-name">C.J. Wright</span>
                     <span class="student-growth">0x Growth</span>
                 </div>
-                <div class="student-meta">New Student (0 months) | 3,562 total minutes | 17% vocab time</div>
+                <div class="student-meta">New Student (0 months) | 3,562 total minutes | Very low language efficiency (0.13 XP/min)</div>
                 <div style="margin-bottom:12px; font-size:0.9rem; color:#555;">
-                    <strong>Pattern:</strong> New student with severe language-heavy allocation (83% language time). Very low language efficiency (0.13 XP/min) indicates content far too hard. Missing EGUMPP, Membean, and Freckle.
+                    <strong>Pattern:</strong> New student with severe content mismatch. Despite high time investment, language efficiency of 0.13 XP/min indicates content far too hard. Needs immediate level reset.
                 </div>
                 <div class="student-issues">
-                    <span class="issue-tag critical">Language-Heavy (83%)</span>
                     <span class="issue-tag critical">Content Too Hard</span>
-                    <span class="issue-tag">Missing Key Apps</span>
-                    <span class="issue-tag">New Student</span>
+                    <span class="issue-tag critical">New Student</span>
                     <span class="issue-tag">High Time/Low Results</span>
                 </div>
             </div>
@@ -788,40 +782,42 @@
                 </div>
                 <div class="student-meta">Middle School | Texas Sports Academy | 48 months tenure | 3,130 total minutes</div>
                 <div style="margin-bottom:12px; font-size:0.9rem; color:#555;">
-                    <strong>Pattern:</strong> Long-tenure student with high time investment but vocab efficiency issues (0.48 XP/min). Despite using all apps including EGUMPP, content difficulty appears mismatched.
+                    <strong>Pattern:</strong> Long-tenure student with high time investment but low vocab efficiency (0.48 XP/min). Part of the Texas Sports Academy systemic issue. Despite tenure, content difficulty appears mismatched.
                 </div>
                 <div class="student-issues">
                     <span class="issue-tag critical">Vocab Content Too Hard</span>
                     <span class="issue-tag">High Time/Low Results</span>
+                    <span class="issue-tag">Texas Sports Academy</span>
                 </div>
             </div>
 
             <div class="student-profile">
                 <div class="student-header">
-                    <span class="student-name">David Sheldon</span>
+                    <span class="student-name">Luis Merino</span>
                     <span class="student-growth">0x Growth</span>
                 </div>
-                <div class="student-meta">Middle School | Alpha Miami | 7 months tenure | 1,836 total minutes</div>
+                <div class="student-meta">Level 2 | Strata | 5 months tenure | Shows 0 min recorded but has MobyMax XP</div>
                 <div style="margin-bottom:12px; font-size:0.9rem; color:#555;">
-                    <strong>Pattern:</strong> Good efficiency metrics (1.76 vocab, 3.10 lang XP/min) but missing EGUMPP and Membean entirely. Strong Vocabloco (1,418 XP) and MobyMax (2,885 XP) usage suggests potential—needs key app introduction.
+                    <strong>Pattern:</strong> Data anomaly—has MobyMax XP (3,468) but 0 minutes recorded. May indicate tracking issue or unusual usage pattern. Needs data investigation before intervention.
                 </div>
                 <div class="student-issues">
-                    <span class="issue-tag critical">Missing EGUMPP + Membean</span>
+                    <span class="issue-tag">Data Anomaly</span>
+                    <span class="issue-tag">Needs Investigation</span>
                 </div>
             </div>
 
             <div class="student-profile">
                 <div class="student-header">
-                    <span class="student-name">Garret Farnham</span>
+                    <span class="student-name">Bobbi Brown</span>
                     <span class="student-growth">0x Growth</span>
                 </div>
-                <div class="student-meta">Middle School | Alpha Scottsdale | 5 months tenure | 1,318 total minutes</div>
+                <div class="student-meta">Middle School | Alpha Austin | 9 months tenure | Good efficiency metrics (1.37 vocab, 2.74 lang)</div>
                 <div style="margin-bottom:12px; font-size:0.9rem; color:#555;">
-                    <strong>Pattern:</strong> Extremely language-heavy (82% language time). High efficiency in both areas (5.02 vocab, 3.68 lang) suggests content may be too easy or gaming. Low total time despite high efficiency is unusual.
+                    <strong>Pattern:</strong> Unusual case—good efficiency metrics but 0x growth. This suggests potential assessment issues, inconsistent attendance, or factors outside the app data. Needs 1:1 conversation to understand.
                 </div>
                 <div class="student-issues">
-                    <span class="issue-tag critical">Language-Heavy (82%)</span>
-                    <span class="issue-tag">Possible Gaming</span>
+                    <span class="issue-tag">Unexplained Gap</span>
+                    <span class="issue-tag">Needs Investigation</span>
                 </div>
             </div>
         </div>
@@ -832,64 +828,57 @@
 
             <div class="alert-box" style="background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%); border-color: #bae6fd;">
                 <h4 style="color: #0369a1;">Program Goal</h4>
-                <p style="color: #0c4a6e;">Move 50%+ of struggling students (22+ students) to 2x growth or above within the next assessment period through targeted interventions addressing identified risk patterns.</p>
+                <p style="color: #0c4a6e;">Move 50%+ of struggling students (22+ students) to 2x growth or above within the next assessment period through targeted interventions addressing identified barriers: content difficulty, engagement issues, new student support, and site-specific problems.</p>
             </div>
 
             <ul class="recommendation-list">
                 <li>
                     <span class="rec-priority immediate">IMMEDIATE</span>
                     <div>
-                        <strong>Key App Onboarding Blitz</strong>
-                        <p style="color:#666; margin-top:8px;">Within 1 week: Identify all 27 students missing EGUMPP+Membean. Schedule guided onboarding sessions. Set up accounts with appropriate difficulty levels. Target: 100% of struggling students using both apps within 2 weeks.</p>
+                        <strong>Content Difficulty Reset for 18 Students</strong>
+                        <p style="color:#666; margin-top:8px;">Students with &lt;0.5 XP/min efficiency need diagnostic assessment THIS WEEK. Reset content to appropriate level—typically 1-2 grades below current placement. This is the most direct path to improved outcomes.</p>
                     </div>
                 </li>
                 <li>
                     <span class="rec-priority immediate">IMMEDIATE</span>
                     <div>
-                        <strong>Texas Sports Academy Emergency Protocol</strong>
-                        <p style="color:#666; margin-top:8px;">7 of 16 students (43.8%) struggling. Immediate site visit needed. Key issues: only 23% vocab time, 2/7 EGUMPP usage. Mandate minimum 40% vocab time allocation. Require EGUMPP for all eligible students.</p>
+                        <strong>Texas Sports Academy Site Review</strong>
+                        <p style="color:#666; margin-top:8px;">7 of 16 students (43.8%) struggling is a systemic issue. Schedule immediate site visit. Review: learning environment, guide support, technical issues, and any site-specific barriers. This isn't 7 individual problems—it's one site problem.</p>
                     </div>
                 </li>
                 <li>
                     <span class="rec-priority immediate">IMMEDIATE</span>
                     <div>
-                        <strong>Content Difficulty Reset</strong>
-                        <p style="color:#666; margin-top:8px;">For 18 students with <0.5 XP/min efficiency: Diagnostic assessment this week. Reset content to appropriate level (often 1-2 grades below current). Monitor for 2 weeks before re-evaluating.</p>
+                        <strong>New Student Intensive Support (10 students)</strong>
+                        <p style="color:#666; margin-top:8px;">All 10 struggling new students (0-3 months) need immediate mentor pairing and weekly check-ins. Don't wait for more assessment data—the pattern is clear. Early intervention prevents struggle from becoming entrenched.</p>
                     </div>
                 </li>
                 <li>
                     <span class="rec-priority short-term">SHORT-TERM</span>
                     <div>
-                        <strong>Time Allocation Rebalancing</strong>
-                        <p style="color:#666; margin-top:8px;">For 19 language-heavy students: Implement minimum 40% vocabulary time requirement. Create structured vocab blocks. Reduce language time by shifting, not adding total time.</p>
+                        <strong>High-Time/Low-Output Investigation (11 students)</strong>
+                        <p style="color:#666; margin-top:8px;">1:1 check-ins for students with 2,500+ min but low XP. Identify specific barriers: Is it distraction? Gaming? Environmental issues? Learned helplessness? Each may need different intervention. Consider shorter, focused sessions.</p>
                     </div>
                 </li>
                 <li>
                     <span class="rec-priority short-term">SHORT-TERM</span>
                     <div>
-                        <strong>Level 2 Support Enhancement</strong>
-                        <p style="color:#666; margin-top:8px;">19.5% struggle rate in upper elementary. Add weekly small-group intervention sessions. Consider peer tutoring program with Middle School high performers. Review transition support from Level 1.</p>
-                    </div>
-                </li>
-                <li>
-                    <span class="rec-priority short-term">SHORT-TERM</span>
-                    <div>
-                        <strong>New Student Onboarding Overhaul</strong>
-                        <p style="color:#666; margin-top:8px;">20.8% of new students struggling. Implement 90-day intensive support: mentor pairing, weekly check-ins, clear milestone expectations, and early intervention triggers at 30/60/90 days.</p>
+                        <strong>Level 2 (4-5th Grade) Support Enhancement</strong>
+                        <p style="color:#666; margin-top:8px;">19.5% struggle rate in upper elementary—highest of any level. Review transition support from Level 1. Consider small-group intervention sessions, peer tutoring, or additional scaffolding for complex content.</p>
                     </div>
                 </li>
                 <li>
                     <span class="rec-priority ongoing">ONGOING</span>
                     <div>
-                        <strong>High-Time Student Monitoring</strong>
-                        <p style="color:#666; margin-top:8px;">11 students with 2,500+ minutes but low XP. Implement engagement monitoring dashboard. Flag students with time/XP ratio >3:1 for intervention. Consider session time limits with quality focus.</p>
+                        <strong>Enhanced Onboarding Protocol</strong>
+                        <p style="color:#666; margin-top:8px;">Prevent future struggling: Implement 90-day intensive support for ALL new students. Mentor pairing from day 1, check-ins at 30/60/90 days, early warning triggers on efficiency metrics. Goal: reduce new student struggle rate from 20.8% to &lt;12%.</p>
                     </div>
                 </li>
                 <li>
                     <span class="rec-priority ongoing">ONGOING</span>
                     <div>
                         <strong>Weekly Struggling Student Review</strong>
-                        <p style="color:#666; margin-top:8px;">Establish weekly review of all students below 1.5x growth. Track intervention compliance and effectiveness. Escalate non-responsive cases to specialist support.</p>
+                        <p style="color:#666; margin-top:8px;">Establish weekly review of all students below 1.5x growth. Track: intervention compliance, efficiency trends, engagement metrics. Escalate non-responsive cases. Don't let students drift—active monitoring catches issues early.</p>
                     </div>
                 </li>
             </ul>
@@ -912,24 +901,24 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>EGUMPP Usage (struggling)</td>
-                                <td>27.9%</td>
-                                <td class="stat-positive">80%+</td>
+                                <td>Content difficulty resets completed</td>
+                                <td>0</td>
+                                <td class="stat-positive">18 students</td>
                             </tr>
                             <tr>
-                                <td>Membean Usage (struggling)</td>
-                                <td>32.6%</td>
-                                <td class="stat-positive">80%+</td>
+                                <td>Texas Sports Academy site review</td>
+                                <td>Not done</td>
+                                <td class="stat-positive">Complete</td>
                             </tr>
                             <tr>
-                                <td>Avg Vocab Time %</td>
-                                <td>35.8%</td>
-                                <td class="stat-positive">42%+</td>
+                                <td>New students with mentors</td>
+                                <td>Unknown</td>
+                                <td class="stat-positive">100%</td>
                             </tr>
                             <tr>
-                                <td>Students with <0.5 efficiency</td>
+                                <td>Students with &lt;0.5 efficiency</td>
                                 <td>18</td>
-                                <td class="stat-positive"><10</td>
+                                <td class="stat-positive">&lt;10</td>
                             </tr>
                         </tbody>
                     </table>
@@ -949,7 +938,7 @@
                             <tr>
                                 <td>Students at 0-1.5x growth</td>
                                 <td>43 (15%)</td>
-                                <td class="stat-positive"><25 (<9%)</td>
+                                <td class="stat-positive">&lt;25 (&lt;9%)</td>
                             </tr>
                             <tr>
                                 <td>Struggling → Meeting Goal</td>
@@ -959,12 +948,12 @@
                             <tr>
                                 <td>Texas Sports Academy struggle %</td>
                                 <td>43.8%</td>
-                                <td class="stat-positive"><20%</td>
+                                <td class="stat-positive">&lt;20%</td>
                             </tr>
                             <tr>
                                 <td>New student struggle rate</td>
                                 <td>20.8%</td>
-                                <td class="stat-positive"><12%</td>
+                                <td class="stat-positive">&lt;12%</td>
                             </tr>
                         </tbody>
                     </table>
