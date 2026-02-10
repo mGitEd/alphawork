@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sander Gabler - Student Analysis</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1 { font-size: 1.8rem; margin-bottom: 8px; }
+        h2 { font-size: 1.3rem; margin: 24px 0 12px; color: #1a73e8; border-bottom: 2px solid #1a73e8; padding-bottom: 4px; }
+        h3 { font-size: 1.1rem; margin: 16px 0 8px; }
+        .header { background: #fff; padding: 24px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .card { background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .alert { background: #fee2e2; border-left: 4px solid #ef4444; }
+        .warning { background: #fef3c7; border-left: 4px solid #f59e0b; }
+        .success { background: #d1fae5; border-left: 4px solid #10b981; }
+        .info { background: #e0f2fe; border-left: 4px solid #0ea5e9; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 16px 0; }
+        .stat { text-align: center; padding: 16px; background: #f8f9fa; border-radius: 8px; }
+        .stat-value { font-size: 1.8rem; font-weight: 700; color: #1a73e8; }
+        .stat-label { font-size: 0.85rem; color: #666; }
+        .stat.danger .stat-value { color: #ef4444; }
+        .stat.warning .stat-value { color: #f59e0b; }
+        .stat.success .stat-value { color: #10b981; }
+        ul { margin-left: 20px; margin-top: 8px; }
+        li { margin-bottom: 6px; }
+        .tag { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; margin: 2px; }
+        .tag-red { background: #fee2e2; color: #dc2626; }
+        .tag-yellow { background: #fef3c7; color: #d97706; }
+        .tag-green { background: #d1fae5; color: #059669; }
+        .tag-blue { background: #dbeafe; color: #2563eb; }
+        .back-link { display: inline-block; margin-bottom: 16px; color: #1a73e8; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        .highlight-box { background: #fef2f2; border: 2px solid #ef4444; padding: 16px; border-radius: 8px; margin: 16px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../struggling-students.html" class="back-link">Back to Low Growth 3+ Students</a>
+
+        <div class="header">
+            <h1>Sander Gabler (Alexander)</h1>
+            <p>Alpha School Brownsville | Middle School | Age Grade 8</p>
+            <div class="grid">
+                <div class="stat danger">
+                    <div class="stat-value">0x</div>
+                    <div class="stat-label">Growth</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Effective Grade</div>
+                </div>
+                <div class="stat success">
+                    <div class="stat-value">433%</div>
+                    <div class="stat-label">XP Target</div>
+                </div>
+                <div class="stat warning">
+                    <div class="stat-value">35.3</div>
+                    <div class="stat-label">Months in Alpha</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card alert">
+            <h2>CRITICAL: Complete Test Avoidance</h2>
+            <div class="highlight-box">
+                <h3>Zero Tests Taken in Language</h3>
+                <p><strong>Sander has been at Alpha for nearly 3 YEARS and has not taken a single language test.</strong></p>
+                <p>This is the most severe case of test avoidance in the Low Growth 3+ cohort.</p>
+            </div>
+            <p><strong>Pattern:</strong> High Achievement / Low Growth - "Capable but avoiding"</p>
+            <p><strong>Core Problem:</strong> <span class="tag tag-red">ZERO tests taken</span> <span class="tag tag-red">RIT dropped 12 points</span> <span class="tag tag-yellow">3 years at Alpha</span></p>
+        </div>
+
+        <div class="card warning">
+            <h2>NWEA MAP Analysis - Alarming Trend</h2>
+            <p><strong>Current RIT Score:</strong> 252 (Winter 2025-26) - 99th Percentile Achievement</p>
+            <div class="grid">
+                <div class="stat">
+                    <div class="stat-value">251</div>
+                    <div class="stat-label">Writing</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">252</div>
+                    <div class="stat-label">Mechanics</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">255</div>
+                    <div class="stat-label">Grammar/Usage</div>
+                </div>
+            </div>
+
+            <h3>RIT Score Trajectory (DECLINING):</h3>
+            <ul>
+                <li>Spring 2023 (Grade 6): 246</li>
+                <li>Fall 2023: 256</li>
+                <li>Spring 2024: 264 (peak)</li>
+                <li>Fall 2024: 249</li>
+                <li><strong>Winter 2026: 252 (DOWN 12 points from peak)</strong></li>
+            </ul>
+            <p><strong>Analysis:</strong> Despite 99th percentile achievement, Sander's RIT has dropped 12 points from the peak. This indicates skill atrophy from lack of practice and engagement. The 34th percentile growth shows Sander is falling behind peers.</p>
+        </div>
+
+        <div class="card">
+            <h2>Test History Analysis</h2>
+            <table style="width:100%; border-collapse:collapse; margin:12px 0;">
+                <tr style="background:#f8f9fa;"><th style="padding:10px; text-align:left;">Grade</th><th style="padding:10px;">Tests Taken</th><th style="padding:10px;">Status</th></tr>
+                <tr><td style="padding:10px;">Grade 3-7</td><td style="padding:10px; text-align:center;">0</td><td><span class="tag tag-red">Never tested</span></td></tr>
+                <tr><td style="padding:10px;">Grade 8</td><td style="padding:10px; text-align:center;">0</td><td><span class="tag tag-red">Never tested</span></td></tr>
+            </table>
+            <p><strong>Analysis:</strong> With an effective grade of 8 and RIT scores in the 250s, Sander has the capability to pass Grade 8+ tests easily. The complete absence of testing suggests this is a behavioral/motivational issue, not a skills issue.</p>
+        </div>
+
+        <div class="card info">
+            <h2>Skills Analysis (Based on NWEA)</h2>
+            <p>Sander's RIT scores (251-255 range) indicate readiness for advanced high school-level skills:</p>
+
+            <h3>Ready to Develop (RIT 251-260):</h3>
+            <ul>
+                <li><strong>Writing:</strong> Precise vocabulary, formal style, complex transitions</li>
+                <li><strong>Mechanics:</strong> Advanced punctuation (ellipsis for omission)</li>
+                <li><strong>Grammar:</strong> No specific skill gaps identified at this level</li>
+            </ul>
+
+            <p><strong>Key Insight:</strong> Sander doesn't have skill gaps - the NWEA shows all three areas are balanced (251-255). The "no learning statements" note for Grammar indicates mastery at the assessed levels.</p>
+        </div>
+
+        <div class="card alert">
+            <h2>Why Zero Growth Despite High Ability</h2>
+            <ol>
+                <li><strong>Complete Test Avoidance:</strong> 35 months at Alpha, zero language tests. This is not accidental - it's a sustained pattern of avoidance.</li>
+                <li><strong>Skill Atrophy:</strong> RIT dropped from 264 to 252 (-12 points). Without testing and targeted practice, even strong students regress.</li>
+                <li><strong>XP Without Accountability:</strong> 433% XP suggests Sander is doing work, but the work isn't translating to testing. May be doing easy/comfortable activities rather than challenging test prep.</li>
+                <li><strong>Veteran Student Plateau:</strong> After 3 years, may have disengaged from the language program entirely. The system may have "given up" assigning tests.</li>
+            </ol>
+        </div>
+
+        <div class="card success">
+            <h2>Recommended Intervention</h2>
+
+            <h3>Immediate Actions (This Week):</h3>
+            <ol>
+                <li><strong>Direct Conversation:</strong> Have a 1:1 with Sander about why no tests have been taken. Understand the barrier (anxiety? boredom? system issues?).</li>
+                <li><strong>Assign First Test:</strong> Start with Grade 7 test (below effective grade) to build confidence. With RIT 252, passing should be easy.</li>
+                <li><strong>Daily Check-in:</strong> Given the 3-year pattern, Sander needs accountability. Brief daily check on test preparation progress.</li>
+            </ol>
+
+            <h3>Root Cause Investigation:</h3>
+            <ul>
+                <li>Is Sander being assigned tests that aren't showing up?</li>
+                <li>Is there a system/technical issue preventing test assignment?</li>
+                <li>Has anyone noticed this 3-year gap before?</li>
+                <li>What does Sander's language XP break down to? (Current: 388 Language, 795 Vocab)</li>
+            </ul>
+
+            <h3>Expected Trajectory if Engaged:</h3>
+            <p>With RIT 252 and proper engagement, Sander should:</p>
+            <ul>
+                <li>Pass Grade 7, 8 tests within 2-3 weeks</li>
+                <li>Potentially test into Grade 9-10 content within a month</li>
+                <li>Show measurable growth on Spring MAP</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>XP and Time Investment</h2>
+            <p><strong>Total XP:</strong> 11,810 (433% of target) - <span class="tag tag-green">Meeting target</span></p>
+            <p><strong>Language XP:</strong> 388 | <strong>Vocab XP:</strong> 795</p>
+            <p><strong>Analysis:</strong> The low Language XP (388) relative to total XP suggests Sander may be avoiding language-specific work in favor of other activities. This aligns with the test avoidance pattern.</p>
+            <p><strong>Recommendation:</strong> Require minimum 50% of daily XP from language-specific apps (EGUMPP, language portions of Freckle) until testing pattern is established.</p>
+        </div>
+
+        <div class="card warning">
+            <h2>Context: Time at Alpha</h2>
+            <p><strong>35.3 months = nearly 3 full years</strong></p>
+            <p>At Age Grade 8, Sander likely joined Alpha in 5th or 6th grade. This means:</p>
+            <ul>
+                <li>Never received a "base course" - all instruction has been hole-filling</li>
+                <li>Has coasted through the system without language accountability</li>
+                <li>May have developed learned helplessness or disengagement</li>
+            </ul>
+            <p><strong>This case requires immediate escalation to administration.</strong> A student cannot be at Alpha for 3 years without any language test attempts and zero growth without systemic failure in oversight.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Lekic Brajovic - Student Analysis</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1 { font-size: 1.8rem; margin-bottom: 8px; }
+        h2 { font-size: 1.3rem; margin: 24px 0 12px; color: #1a73e8; border-bottom: 2px solid #1a73e8; padding-bottom: 4px; }
+        h3 { font-size: 1.1rem; margin: 16px 0 8px; }
+        .header { background: #fff; padding: 24px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .card { background: #fff; padding: 20px; border-radius: 12px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .alert { background: #fee2e2; border-left: 4px solid #ef4444; }
+        .warning { background: #fef3c7; border-left: 4px solid #f59e0b; }
+        .success { background: #d1fae5; border-left: 4px solid #10b981; }
+        .info { background: #e0f2fe; border-left: 4px solid #0ea5e9; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 16px 0; }
+        .stat { text-align: center; padding: 16px; background: #f8f9fa; border-radius: 8px; }
+        .stat-value { font-size: 1.8rem; font-weight: 700; color: #1a73e8; }
+        .stat-label { font-size: 0.85rem; color: #666; }
+        .stat.danger .stat-value { color: #ef4444; }
+        .stat.warning .stat-value { color: #f59e0b; }
+        .stat.success .stat-value { color: #10b981; }
+        ul { margin-left: 20px; margin-top: 8px; }
+        li { margin-bottom: 6px; }
+        .tag { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; margin: 2px; }
+        .tag-red { background: #fee2e2; color: #dc2626; }
+        .tag-yellow { background: #fef3c7; color: #d97706; }
+        .tag-green { background: #d1fae5; color: #059669; }
+        .tag-blue { background: #dbeafe; color: #2563eb; }
+        table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #e5e7eb; }
+        th { background: #f8f9fa; font-weight: 600; }
+        .priority-1 { background: #fee2e2; }
+        .priority-2 { background: #fef3c7; }
+        .back-link { display: inline-block; margin-bottom: 16px; color: #1a73e8; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../struggling-students.html" class="back-link">Back to Low Growth 3+ Students</a>
+
+        <div class="header">
+            <h1>Alex Lekic Brajovic</h1>
+            <p>Texas Sports Academy | Level 2 | Age Grade 5</p>
+            <div class="grid">
+                <div class="stat danger">
+                    <div class="stat-value">0x</div>
+                    <div class="stat-label">Growth</div>
+                </div>
+                <div class="stat warning">
+                    <div class="stat-value">7</div>
+                    <div class="stat-label">Effective Grade</div>
+                </div>
+                <div class="stat success">
+                    <div class="stat-value">611%</div>
+                    <div class="stat-label">XP Target</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">12.2</div>
+                    <div class="stat-label">Months in Alpha</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card alert">
+            <h2>Critical Issue Summary</h2>
+            <p><strong>Pattern:</strong> High Achievement / Low Growth - "Smart but not progressing"</p>
+            <p>Alex scores at the 94th percentile in achievement but only 28th percentile in growth. This indicates the student has strong baseline skills but isn't making expected progress. With 12+ months at Alpha and 611% XP (extremely high effort), the issue is NOT lack of work.</p>
+            <p><strong>Core Problem:</strong> <span class="tag tag-red">Mechanics weakness blocking advancement</span> <span class="tag tag-yellow">68-day test gap</span> <span class="tag tag-yellow">Testing at wrong level</span></p>
+        </div>
+
+        <div class="card">
+            <h2>Test History Analysis</h2>
+            <table>
+                <tr><th>Grade</th><th>Tests Taken</th><th>Status</th></tr>
+                <tr><td>Grade 3</td><td>1</td><td><span class="tag tag-green">Passed</span></td></tr>
+                <tr><td>Grade 4</td><td>1</td><td><span class="tag tag-green">Passed</span></td></tr>
+                <tr class="priority-2"><td>Grade 5</td><td>4</td><td><span class="tag tag-yellow">Doom looping - 4 attempts</span></td></tr>
+                <tr><td>Grade 6</td><td>1</td><td><span class="tag tag-green">Passed (6.5)</span></td></tr>
+                <tr><td>Grade 7</td><td>1</td><td><span class="tag tag-red">Not passed</span></td></tr>
+            </table>
+            <p><strong>Analysis:</strong> Moved quickly through G3-4, then got stuck in G5 with 4 attempts. Eventually passed to G6 (highest: 6.5) but stalled at G7. The 4 attempts at Grade 5 suggest specific skill gaps at that level that are now blocking higher-level mastery.</p>
+            <p><strong>Test Gaps:</strong> Longest gap of 68 days is extremely problematic. Average gap of 12 days is acceptable when testing, but the long gaps indicate periods of avoidance.</p>
+        </div>
+
+        <div class="card">
+            <h2>NWEA MAP Analysis</h2>
+            <p><strong>Overall RIT Score:</strong> 229 (Winter 2025-26)</p>
+            <div class="grid">
+                <div class="stat danger">
+                    <div class="stat-value">215</div>
+                    <div class="stat-label">Mechanics (Focus Area)</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">232</div>
+                    <div class="stat-label">Writing</div>
+                </div>
+                <div class="stat success">
+                    <div class="stat-value">240</div>
+                    <div class="stat-label">Grammar/Usage (Strength)</div>
+                </div>
+            </div>
+            <p><strong>NWEA Quadrant:</strong> Low Growth / High Achievement</p>
+            <p>The 25-point gap between Mechanics (215) and Grammar (240) reveals the core issue: Alex understands grammar rules conceptually but struggles with mechanical application (capitalization, punctuation, spelling).</p>
+        </div>
+
+        <div class="card info">
+            <h2>Priority Skills to Develop</h2>
+            <p>Based on NWEA data, Alex needs to develop skills in the RIT 211-220 range for Mechanics:</p>
+
+            <h3>1. Punctuation (Highest Priority)</h3>
+            <ul>
+                <li>Commas in compound sentences, introductory elements, and direct address</li>
+                <li>Quotation marks and dialogue punctuation</li>
+                <li>Apostrophes for possessives (especially plurals)</li>
+                <li>Semicolons and colons for lists</li>
+            </ul>
+
+            <h3>2. Capitalization</h3>
+            <ul>
+                <li>Titles of books, songs, poems</li>
+                <li>Organizations, schools, businesses</li>
+                <li>Professional/official titles in context</li>
+                <li>Capitalization in direct quotations</li>
+            </ul>
+
+            <h3>3. Spelling Patterns</h3>
+            <ul>
+                <li>Words with Latin roots</li>
+                <li>Words ending in -ion, -ous, -ible/-able</li>
+                <li>Irregular plurals and vowel patterns</li>
+                <li>Commonly misspelled words</li>
+            </ul>
+        </div>
+
+        <div class="card warning">
+            <h2>Why This Student Has Zero Growth</h2>
+            <ol>
+                <li><strong>Mechanics Gap:</strong> NWEA shows 215 in mechanics vs 240 in grammar - a 25-point gap. Tests at Grade 5+ require strong mechanics, which is why Alex doom-looped 4 times at that level.</li>
+                <li><strong>Testing at Wrong Level:</strong> Currently attempting Grade 7 tests, but mechanics skills are at approximately Grade 3-4 level (RIT 215). This mismatch causes repeated failures.</li>
+                <li><strong>Long Test Gaps:</strong> 68-day gap indicates avoidance after failures. When Alex does test, performance suffers due to lack of recent practice.</li>
+                <li><strong>No Full Base Course:</strong> At Alpha 12 months with age grade 5, Alex likely got hole-filling rather than comprehensive Grade 5 mechanics instruction.</li>
+            </ol>
+        </div>
+
+        <div class="card success">
+            <h2>Recommended Intervention</h2>
+            <h3>Immediate Actions:</h3>
+            <ol>
+                <li><strong>Step Back:</strong> Have Alex work on Grade 4-5 mechanics content specifically, even though they've "passed" those tests. The NWEA shows gaps at this level.</li>
+                <li><strong>Daily Mechanics Practice:</strong> 15-20 minutes daily on punctuation and capitalization rules using EGUMPP or targeted Freckle assignments.</li>
+                <li><strong>Frequent Low-Stakes Testing:</strong> Break the 68-day gap pattern. Alex should attempt a test every 5-7 days minimum to rebuild confidence.</li>
+            </ol>
+
+            <h3>Focus Areas for Language Apps:</h3>
+            <ul>
+                <li><strong>EGUMPP:</strong> Focus on Mechanics modules (Commas, Quotation Marks, Apostrophes)</li>
+                <li><strong>Freckle:</strong> Assign Grade 4-5 Language standards for reinforcement</li>
+                <li><strong>MobyMax:</strong> Use diagnostic to find specific punctuation gaps</li>
+            </ul>
+
+            <h3>Success Metrics:</h3>
+            <ul>
+                <li>Pass Grade 5 test at 90%+ (rebuild foundation)</li>
+                <li>Reduce test gaps to under 10 days</li>
+                <li>Increase Mechanics RIT to 225+ on next MAP</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>XP and Time Investment</h2>
+            <p><strong>Total XP:</strong> 16,667 (611% of target) - <span class="tag tag-green">Excellent effort</span></p>
+            <p><strong>Language XP:</strong> 582 | <strong>Vocab XP:</strong> 2,160</p>
+            <p><strong>Analysis:</strong> Alex is putting in significant effort (6x expected), so motivation isn't the issue. However, the work may not be targeted at the right skills. The relatively low Language XP compared to total XP suggests time may be going to other subjects or less productive activities.</p>
+            <p><strong>Recommendation:</strong> Shift more time from vocabulary to targeted language mechanics. Current vocab work is good, but the bottleneck is mechanics.</p>
+        </div>
+    </div>
+</body>
+</html>
